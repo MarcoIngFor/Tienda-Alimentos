@@ -1,0 +1,200 @@
+/* Esta seccion configura la apariencia del header que se encuentra dentro del body */
+header {
+    background-color: darkgreen;
+    border-radius: 10px;
+}
+
+.banner-header{
+    width: 1000px;
+    display: block;
+    margin: auto;
+    background-color: darkgreen;  
+}
+
+nav.navegador{
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+    align-items: center;
+}
+
+img.logo-nav{
+    width: 75px;
+    margin-right: 30px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none; /*Quita el subrayado a los enlaces*/
+    padding: 8px;
+    width: 60px;
+    text-align: center;
+    border: 2px solid green;
+}
+
+nav a.active{
+    background-color:darkslategrey;
+    border-radius: 5px;
+}
+
+nav a:hover{
+    color: red;
+    background-color: white;
+    border-radius: 5px;
+}
+
+section.buscador-nav{
+    margin-left: auto;
+    padding: 10px;
+}
+
+label.bus-pro{
+    color: white;
+}
+
+input.bus-pro{
+    height: 25px;
+}
+
+button.buscar-producto{
+    border-radius: 5px;
+    background-color:darkslategrey;
+    padding: 8px;
+    color:white;
+}
+
+section.bienvenida{
+    color: darkslategrey;
+    text-align: center;
+    padding: 10px;
+    background-color: #f5f1e8;; 
+}
+
+/* Aca comenzare a personalizar el body */
+
+body {
+    background-color: #f5f1e8;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    color: green
+}
+
+div.slider{
+    display: flex;
+    gap: 5px;
+    /* justify-content: space-around; Centra los productos en la pagina y entre si mismos*/
+    /* justify-content: flex-start; Justifica el contenido de izquierda a derecha*/
+    /* justify-content: flex-end; Justifica el contenido de Derecha a izquierda */
+    /* justify-content: space-between; Genera un espacio entre los productos sin considerar el espacio de los bordes*/
+    /* justify-content: center; Centra los objetos que se encuentran en ella en este caso los productos de ofertas */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div.slider .slide{
+    width: 100%;
+    display: none;
+}
+
+div.slider .slide.active{
+    display: block;
+}
+
+img.imagen-categoria{
+    width: 100%;
+    border-radius: 10%;
+    transition: transform 0.3s;
+}
+
+img.imagen-categoria:hover{
+    transform: scale(1.03);
+}
+
+article.categoria{
+    width: 30%;
+    text-align: center;
+}
+    
+
+div.contenedor-categorias{
+    display: flex;
+    gap: 20px 0;
+    /* justify-content: space-around; Centra los productos en la pagina y entre si mismos*/
+    /* justify-content: flex-start; Justifica el contenido de izquierda a derecha*/
+    /* justify-content: flex-end; Justifica el contenido de Derecha a izquierda */
+    /* justify-content: space-between; Genera un espacio entre los productos sin considerar el espacio de los bordes*/
+    /* justify-content: center; Centra los objetos que se encuentran en ella en este caso los productos de ofertas */
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+
+footer{
+    margin-top: 40px;
+    background-color: #2f2f2f;
+    color: white;
+    padding: 30px;
+}
+
+div.contenido-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img.logo-footer{
+    width: 150px;
+}
+
+p.copyright{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+/* Primer comportamiento del objeto boton */
+button.agregar-carrito{
+    padding: 7px;
+    border-radius: 100px;
+}
+
+/* Segundo comportamiento del objeto boton con hover indicamos como actuar cuando el mouse se situe sobre el objeto*/
+button.agregar-carrito:hover{
+    padding: 7px;
+    border-radius: 100px;
+    background-color:aquamarine;        /*Modifica el color del objeto en este caso el boton*/
+    cursor: pointer;                      /*Cambia el cursor a una manito*/
+}
+
+
+/*Seccion para Modificar estetica de Formulario*/
+section.formulario{
+    margin-bottom: 30px;
+}
+
+section.formulario label{
+    display: block;
+}
+
+section.formulario input, section.formulario textarea{
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+section.formulario textarea{
+    height: 150px;
+}
+
+button.sendMessage {
+    padding: 7px;
+    border-radius: 10px;
+}
+
+button.sendMessage:hover {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: greenyellow;
+    cursor: pointer;
+}

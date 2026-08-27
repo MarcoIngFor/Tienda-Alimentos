@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Parada Del Medio - Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>La Parada del Medio</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="carrito.html">Carrito</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Contacto</h2>
+        <form class="form">
+            <section class="formulario">
+                <label for="nombre">Nombres:</label>
+                <input type="text" placeholder="Ingrese sus Nombres ..." id="nombre" name="nombre">
+                <p id="error-nombre" class="error"></p>
+            </section>
+            <section class="formulario">
+                <label for="apellido">Apellidos:</label>
+                <input type="text" placeholder="Ingrese sus Apellidos ..." id="apellido" name="apellido">
+                <p id="error-apellido" class="error"></p>
+            </section>
+            <section class="formulario">
+                <label for="correo">Correo:</label>
+                <input type="email" placeholder="correo@......" id="correo" name="correo">
+                <p id="error-correo" class="error"></p>
+            </section>
+            <section class="formulario">
+                <label for="telefono">Telefono:</label>
+                <input type="tel" placeholder="123456789" id="telefono" name="telefono">
+                <p id="error-telefono" class="error"></p>
+            </section>
+            <section class="formulario">
+                <label for="mensaje">Mensaje:</label>
+                <textarea placeholder="Escriba en este cuadro su Mensaje..." id="mensaje" name="mensaje" maxlength="300"></textarea>
+                <p id="error-mensaje" class="error"></p>
+                <p id="mensaje-enviado"></p>
+            </section>
+            <button class="sendMessage" type="submit">Enviar Mensaje</button>
+        </form>
+    </main>
+    <footer>
+        <p>Horario de Atencion:</p>
+        <p>Lunes a Viernes de 08:00 a 22:00 hrs</p>
+        <p>Sabados y Domingos de 09:00 a 19:00 hrs</p>
+        <p>&copy;2026 La Parada del Medio</p>
+    </footer>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
