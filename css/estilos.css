@@ -5,10 +5,11 @@ header {
 }
 
 .banner-header{
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     display: block;
     margin: auto;
-    background-color: darkgreen;  
+    background-color: darkgreen;
 }
 
 nav.navegador{
