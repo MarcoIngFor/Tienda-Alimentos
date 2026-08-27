@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 /* Esta seccion configura la apariencia del header que se encuentra dentro del body */
 header {
     background-color: darkgreen;
@@ -202,4 +206,74 @@ button.sendMessage:hover {
     border-radius: 20px;
     background-color: greenyellow;
     cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px){
+
+    nav.navegador{
+        flex-wrap: wrap;
+    }
+
+    section.buscador-nav{
+        margin-left: 0;
+    }
+
+    article.categoria{
+        width: 45%;
+    }
+
+    div.contenido-footer{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media (max-width: 600px){
+
+    nav.navegador{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    img.logo-nav{
+        margin-right: 0;
+    }
+
+    nav a{
+        width: 80%;
+    }
+
+    section.buscador-nav{
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    input.bus-pro{
+        width: 60%;
+    }
+
+    article.categoria{
+        width: 90%;
+    }
+
+    div.contenido-footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section.formulario input,
+    section.formulario textarea{
+        width: 90%;
+    }
+
 }
