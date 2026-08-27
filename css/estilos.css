@@ -19,6 +19,10 @@ nav.navegador{
     background-color: #333;
     border-radius: 5px;
     align-items: center;
+
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 img.logo-nav{
