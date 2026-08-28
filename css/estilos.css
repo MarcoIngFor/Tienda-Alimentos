@@ -34,7 +34,16 @@ img.logo-nav{
     margin-right: 30px;
 }
 
-nav a{
+button.menu-hamburguesa{
+    display: none;
+}
+
+nav div.enlaces-nav{
+    display: flex;
+    gap: 20px;
+}
+
+nav div.enlaces-nav a{
     color: white;
     text-decoration: none; /*Quita el subrayado a los enlaces*/
     padding: 8px;
@@ -43,7 +52,7 @@ nav a{
     border: 2px solid green;
 }
 
-nav a.active{
+nav div.enlaces-nav a.active{
     background-color:darkslategrey;
     border-radius: 5px;
 }
@@ -239,16 +248,26 @@ button.sendMessage:hover {
 
 @media (max-width: 600px){
 
+    button.menu-hamburguesa{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    
     nav.navegador{
         flex-direction:column;
         gap: 10px;
+    }
+
+    nav div.enlaces-nav{
+        display: none;
     }
 
     img.logo-nav{
         margin-right: 0;
     }
 
-    nav a{
+    nav div.enlaces-nav a{
         width: 80%;
     }
 
