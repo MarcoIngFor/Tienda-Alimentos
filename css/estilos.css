@@ -259,10 +259,20 @@ button.sendMessage:hover {
         gap: 10px;
     }
 
+    /*Oculta el Menu*/
     nav div.enlaces-nav{
         display: none;
     }
 
+    /* Muestra el menú cuando JavaScript agrega la clase abierto */
+    nav div.enlaces-nav.abierto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
     img.logo-nav{
         margin-right: 0;
     }
