@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Iniciar Sesión - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <!-- Banner principal -->
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+
+        <!-- Barra de navegación -->
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+
+            <!-- Botón menú hamburguesa para celular -->
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+
+            <!-- Enlaces principales -->
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <!-- Buscador -->
+            <section class="buscador-nav">
+
+                <label for="busqueda" class="bus-pro">
+                    Buscar Producto
+                </label>
+
+                <input type="text"
+                       placeholder="Buscar Productos..."
+                       id="busqueda"
+                       class="bus-pro">
+
+                <button type="button"
+                        class="buscar-producto">
+                    Buscar
+                </button>
+
+            </section>
+
+
+            <!-- Indicador del carrito -->
+            <a href="carrito.html" class="carrito">
+                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+            </a>
+
+        </nav>
+
+
+        <!-- Encabezado de la página -->
+        <section class="login">
+
+            <h1>Iniciar Sesión</h1>
+
+            <p class="login-2">
+                Bienvenido a La Parada del Medio
+            </p>
+
+        </section>
+
+    </header>
+
+
+
+    <main>
+
+        <section class="formulario-login">
+
+            <h2>Acceso de Usuario</h2>
+
+
+            <!-- Correo electrónico -->
+            <section class="formulario">
+
+                <label for="correo-login">
+                    👤 Correo Electrónico
+                </label>
+
+                <input type="email"
+                       id="correo-login"
+                       name="correo-login"
+                       placeholder="correo@ejemplo.com">
+
+                <p id="error-correo-login"
+                   class="error">
+                </p>
+
+            </section>
+
+
+            <!-- Contraseña -->
+            <section class="formulario">
+
+                <label for="password-login">
+                    🔒 Contraseña
+                </label>
+
+                <input type="password"
+                       id="password-login"
+                       name="password-login"
+                       placeholder="Ingrese su contraseña">
+
+                <p id="error-password-login"
+                   class="error">
+                </p>
+
+            </section>
+
+
+            <!-- Botón iniciar sesión -->
+            <button type="button"
+                    class="sendMessage"
+                    id="btn-login">
+                Iniciar Sesión
+            </button>
+
+
+            <p class="registro-login">
+                ¿No tienes una cuenta?
+                <a href="registro.html">
+                    Crear cuenta
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

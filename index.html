@@ -1,106 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Almacen</title>
+
+    <title>Home - La Parada del Medio</title>
+
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
+
     <header>
+
+        <!-- Banner principal -->
         <a href="index.html">
-                            <img src="img/logo/banner.png" alt="Logo" class="banner-header">
+            <img src="img/logo/banner.png" alt="La Parada del Medio" class="banner-header">
         </a>
+
+
+        <!-- Barra de navegación -->
         <nav class="navegador">
-            <img src="img/logo/logo.png" alt="Logo" class="logo-nav">
-            <button class="menu-hamburguesa" id="menu-hamburguesa">☰</button>
+
+            <img src="img/logo/logo.png" alt="Logo La Parada del Medio" class="logo-nav">
+
+
+            <!-- Botón menú hamburguesa para celular -->
+            <button class="menu-hamburguesa" id="menu-hamburguesa" type="button">
+                ☰
+            </button>
+
+
+            <!-- Enlaces principales -->
             <div class="enlaces-nav" id="enlaces-nav">
-                                                        <a href="index.html" class="active">Inicio</a>
-                                                        <a href="productos.html" >Productos</a>
-                                                        <a href="contacto.html" >Contacto</a>
-                                                        <a href="carrito.html" >Carrito</a>
+
+                <a href="index.html" class="active">
+                    Home
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
             </div>
+
+
+            <!-- Buscador -->
             <section class="buscador-nav">
-                <label for="busqueda" class="bus-pro">Buscar Producto</label>
+
+                <label for="busqueda" class="bus-pro">
+                    Buscar Producto
+                </label>
+
                 <input type="text" placeholder="Buscar Productos..." id="busqueda" class="bus-pro">
-                <button class="buscar-producto">Buscar</button>
+
+                <button type="button" class="buscar-producto">
+                    Buscar
+                </button>
+
             </section>
+
+
+            <!-- Indicador de carrito -->
+            <a href="carrito.html" class="carrito">
+
+                🛒 Carrito
+                (<span id="cantidad-carrito">0</span>)
+
+            </a>
+
         </nav>
-        <section class="bienvenida">
-            <h2>Bienvenidos a La Parada del Medio</h2>
-            <p>Encuentra productos para tu hogar, alimentos, bebidas y mucho más.</p>
-        </section>
+
+
+        <!-- Bienvenida + acceso a sesión -->
+        <div class="welcome">
+
+            <section class="bienvenida">
+
+                <h2>
+                    Bienvenidos a La Parada del Medio
+                </h2>
+
+                <p>
+                    Encuentra productos para tu hogar,
+                    alimentos, bebidas y mucho más.
+                </p>
+
+            </section>
+
+
+            <section class="ini-ses">
+
+                <a href="sesion.html">
+
+                    <img src="img/logo/sesion.png" alt="Iniciar Sesión" class="ini-sesion">
+
+                </a>
+
+            </section>
+
+        </div>
+
     </header>
+
+
+
     <main>
-        <section>
+
+        <!-- Slider de ofertas -->
+        <section class="ofertas">
+
             <div class="slider">
-                <img class="slide active" src="img/ofertas/Sllide1.png" alt="Oferta de la Semana">
-                <img class="slide" src="img/ofertas/Sllide2.png" alt="Oferta de la Semana">
-                <img class="slide" src="img/ofertas/Sllide3.png" alt="Oferta de la Semana">
+
+                <img class="slide active" src="img/ofertas/Sllide1.png" alt="Oferta de la Semana 1">
+
+                <img class="slide" src="img/ofertas/Sllide2.png" alt="Oferta de la Semana 2">
+
+                <img class="slide" src="img/ofertas/Sllide3.png" alt="Oferta de la Semana 3">
+
             </div>
+
         </section>
+
+
+
+        <!-- Categorías -->
         <section class="categorias">
-            <h2>Nuestras categorias</h2>
+
+            <h2>
+                Nuestras Categorías
+            </h2>
+
+
             <div class="contenedor-categorias">
-                <article class=" categoria">
-                    <a href="productos.html?categoria=abarrotes">
-                        <img src="img/Productos/Categorias/abarrotes.png" alt="Categoria Abarrotes" class="imagen-categoria">
-                    </a>
-                </article>
+
                 <article class="categoria">
-                    <a href="productos.html?categoria=bebidas">
-                                                                <img src="img/Productos/Categorias/bebidas.png" alt="Categoria Bebidas" class="imagen-categoria">
+
+                    <a href="productos.html#abarrotes">
+
+                        <img src="img/Productos/Categorias/abarrotes.png" alt="Categoría Abarrotes" class="imagen-categoria">
+
                     </a>
+
                 </article>
+
+
                 <article class="categoria">
-                    <a href="productos.html?categoria=snacks">
-                                                                <img src="img/Productos/Categorias/snacks.png" alt="Categoria Snacks" class="imagen-categoria">
+
+                    <a href="productos.html#bebidas">
+
+                        <img src="img/Productos/Categorias/bebidas.png" alt="Categoría Bebidas" class="imagen-categoria">
+
                     </a>
+
                 </article>
+
+
                 <article class="categoria">
-                    <a href="productos.html?categoria=lacteos">
-                                                                <img src="img/Productos/Categorias/lacteos.png" alt="Categoria Lacteos" class="imagen-categoria">
+
+                    <a href="productos.html#snacks">
+
+                        <img src="img/Productos/Categorias/snacks.png" alt="Categoría Snacks" class="imagen-categoria">
+
                     </a>
+
                 </article>
+
+
                 <article class="categoria">
-                    <a href="productos.html?categoria=bebe">
-                                                                <img src="img/Productos/Categorias/bebe.png" alt="Categoria Bebe" class="imagen-categoria">
+
+                    <a href="productos.html#lacteos">
+
+                        <img src="img/Productos/Categorias/lacteos.png" alt="Categoría Lácteos" class="imagen-categoria">
+
                     </a>
+
                 </article>
+
+
                 <article class="categoria">
-                    <a href="productos.html?categoria=limpieza">
-                                                                <img src="img/Productos/Categorias/limpieza.png" alt="Categoria Limpieza" class="imagen-categoria">
+
+                    <a href="productos.html#bebe">
+
+                        <img src="img/Productos/Categorias/bebe.png" alt="Categoría Bebé" class="imagen-categoria">
+
                     </a>
+
                 </article>
+
+
+                <article class="categoria">
+
+                    <a href="productos.html#limpieza">
+
+                        <img src="img/Productos/Categorias/limpieza.png" alt="Categoría Limpieza" class="imagen-categoria">
+
+                    </a>
+
+                </article>
+
             </div>
+
         </section>
+
     </main>
+
+
 
     <footer>
 
         <div class="contenido-footer">
 
             <section class="footer-negocio">
+
                 <a href="index.html">
-                                    <img src="img/logo/logo.png" alt="logo" class="logo-footer">
+
+                    <img src="img/logo/logo.png" alt="Logo La Parada del Medio" class="logo-footer">
+
                 </a>
+
             </section>
+
 
             <section class="footer-horario">
-                <h3>Horario de Atención</h3>
-                <p>Lunes a Viernes de 08:00 a 22:00 hrs</p>
-                <p>Sábados y Domingos de 09:00 a 19:00 hrs</p>
+
+                <h3>
+                    Horario de Atención
+                </h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
             </section>
 
+
             <section class="footer-contacto">
-                <h3>Contacto</h3>
-                <p>Teléfono: +56 9 12345678</p>
-                <p>Correo: contacto@laparadadelmedio.cl</p>
+
+                <h3>
+                    Contacto
+                </h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
             </section>
+
         </div>
-        <p class="copyright">© 2026 La Parada del Medio</p>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
     </footer>
+
+
     <script src="js/index.js"></script>
+
 </body>
+
 </html>

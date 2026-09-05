@@ -63,10 +63,10 @@ formulario.addEventListener("submit",function(event){
         console.log("El correo es Obligatorio");
         errorCorreo.textContent="El correo es Obligatorio";
         formularioValido = false;
-    }else if ((!correo.value.includes("@"))  || (!correo.value.includes(".")))
+    }else if ((!correo.value.includes("@duoc.cl")) && (!correo.value.includes("@profesor.duoc.cl")) && (!correo.value.includes("@gmail.com")))
     {
         console.log("Formato Incorrecto");
-        errorCorreo.textContent="Ingrese Formato Correcto: algo@algo.algo";
+        errorCorreo.textContent="Ingrese Formato Correcto: algo@duoc.cl, algo@profesor.duoc.cl, algo@gmail.com";
         formularioValido = false;
     }else{
         console.log(correo.value);
@@ -107,8 +107,8 @@ formulario.addEventListener("submit",function(event){
     console.log("Formulario Validado",formularioValido);
 
     if(formularioValido){
-        console.log(nombre.value+" "+apellido.value + ", ha ingresado los datos correctamente");
-        mensajeEnviado.textContent=nombre.value+" "+apellido.value + ", ha ingresado los datos correctamente";
+        console.log(nombre.value+" "+apellido.value + ", Se ha enviado su mensaje");
+        mensajeEnviado.textContent=nombre.value+" "+apellido.value + ", Se ha enviado su mensaje";
         formulario.reset();
     }
 })

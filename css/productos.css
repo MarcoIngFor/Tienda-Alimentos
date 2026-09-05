@@ -1,0 +1,206 @@
+/* =========================
+   PAGINA DE PRODUCTOS
+========================= */
+
+
+/* =========================
+   NAVEGACION DE CATEGORIAS
+========================= */
+
+nav.nav-categorias{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    padding: 15px;
+
+    background-color: darkgreen;
+}
+
+
+nav.nav-categorias a{
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    background-color: darkslategrey;
+
+    border: 2px solid green;
+
+    border-radius: 5px;
+}
+
+
+nav.nav-categorias a:hover{
+    color: chartreuse;
+
+    background-color: lightslategrey;
+}
+
+
+/* =========================
+   TITULO GENERAL PRODUCTOS
+========================= */
+
+main h1{
+    text-align: center;
+
+    color: darkgreen;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   SECCIONES DE PRODUCTOS
+========================= */
+
+section.seccion-productos{
+    margin-top: 30px;
+
+    padding: 20px;
+}
+
+
+section.seccion-productos h2{
+    color: darkgreen;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   CONTENEDOR DE PRODUCTOS
+========================= */
+
+div.contenedor-productos{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   PRODUCTO INDIVIDUAL
+========================= */
+
+article.producto{
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 250px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   IMAGEN DE PRODUCTO
+========================= */
+
+img.imagen-producto{
+    width: 250px;
+
+    height: 250px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   BOTON AGREGAR AL CARRITO
+========================= */
+
+button.agregar-carrito{
+    margin-top: 10px;
+
+    padding: 8px 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid grey;
+
+    cursor: pointer;
+}
+
+
+button.agregar-carrito:hover{
+    background-color: aquamarine;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px){
+
+    article.producto{
+        width: 220px;
+    }
+
+
+    img.imagen-producto{
+        width: 220px;
+
+        height: 220px;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media (max-width: 600px){
+
+    nav.nav-categorias{
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    nav.nav-categorias a{
+        width: 80%;
+
+        text-align: center;
+    }
+
+
+    div.contenedor-productos{
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    article.producto{
+        width: 90%;
+    }
+
+
+    img.imagen-producto{
+        width: 100%;
+
+        height: auto;
+
+        max-width: 300px;
+    }
+
+}

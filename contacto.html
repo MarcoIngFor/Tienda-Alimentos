@@ -1,59 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Parada Del Medio - Contacto</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Contacto - La Parada del Medio</title>
+
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
+
     <header>
-        <h1>La Parada del Medio</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="carrito.html">Carrito</a>
+
+        <!-- Banner principal -->
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                alt="La Parada del Medio"
+                class="banner-header">
+        </a>
+
+        <!-- Barra de navegación -->
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                alt="Logo La Parada del Medio"
+                class="logo-nav">
+
+            <!-- Menú hamburguesa -->
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+            <!-- Enlaces -->
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="contacto.html" class="active">
+                    Contacto
+                </a>
+
+            </div>
+
+            <!-- Buscador -->
+            <section class="buscador-nav">
+
+                <label for="busqueda" class="bus-pro">
+                    Buscar Producto
+                </label>
+
+                <input type="text"
+                    placeholder="Buscar Productos..."
+                    id="busqueda"
+                    class="bus-pro">
+
+                <button type="button"
+                        class="buscar-producto">
+                    Buscar
+                </button>
+
+            </section>
+
+            <!-- Carrito -->
+            <a href="carrito.html" class="carrito">
+                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+            </a>
+
         </nav>
+
+        <!-- Encabezado visual -->
+        <div class="welcome">
+
+            <section class="bienvenida">
+
+                <h2>Contacto</h2>
+
+                <p>
+                    Escríbenos y nos pondremos en contacto contigo.
+                </p>
+
+            </section>
+
+            <!-- Iniciar sesión -->
+            <section class="ini-ses">
+
+                <a href="sesion.html">
+
+                    <img src="img/logo/sesion.png"
+                        alt="Iniciar Sesión"
+                        class="ini-sesion">
+
+                </a>
+
+            </section>
+
+        </div>
+
     </header>
+
+
     <main>
-        <h2>Contacto</h2>
-        <form class="form">
-            <section class="formulario">
-                <label for="nombre">Nombres:</label>
-                <input type="text" placeholder="Ingrese sus Nombres ..." id="nombre" name="nombre">
-                <p id="error-nombre" class="error"></p>
-            </section>
-            <section class="formulario">
-                <label for="apellido">Apellidos:</label>
-                <input type="text" placeholder="Ingrese sus Apellidos ..." id="apellido" name="apellido">
-                <p id="error-apellido" class="error"></p>
-            </section>
-            <section class="formulario">
-                <label for="correo">Correo:</label>
-                <input type="email" placeholder="correo@......" id="correo" name="correo">
-                <p id="error-correo" class="error"></p>
-            </section>
-            <section class="formulario">
-                <label for="telefono">Telefono:</label>
-                <input type="tel" placeholder="123456789" id="telefono" name="telefono">
-                <p id="error-telefono" class="error"></p>
-            </section>
-            <section class="formulario">
-                <label for="mensaje">Mensaje:</label>
-                <textarea placeholder="Escriba en este cuadro su Mensaje..." id="mensaje" name="mensaje" maxlength="300"></textarea>
-                <p id="error-mensaje" class="error"></p>
-                <p id="mensaje-enviado"></p>
-            </section>
-            <button class="sendMessage" type="submit">Enviar Mensaje</button>
-        </form>
+
+        <section class="formulario-contacto">
+
+            <h2>Formulario de Contacto</h2>
+
+
+            <!-- Formulario -->
+            <form class="form">
+
+                <!-- Nombre -->
+                <section class="formulario">
+
+                    <label for="nombre">
+                        Nombres:
+                    </label>
+
+                    <input type="text"
+                           placeholder="Ingrese sus Nombres ..."
+                           id="nombre"
+                           name="nombre">
+
+                    <p id="error-nombre"
+                       class="error">
+                    </p>
+
+                </section>
+
+
+                <!-- Apellido -->
+                <section class="formulario">
+
+                    <label for="apellido">
+                        Apellidos:
+                    </label>
+
+                    <input type="text"
+                           placeholder="Ingrese sus Apellidos ..."
+                           id="apellido"
+                           name="apellido">
+
+                    <p id="error-apellido"
+                       class="error">
+                    </p>
+
+                </section>
+
+
+                <!-- Correo -->
+                <section class="formulario">
+
+                    <label for="correo">
+                        Correo:
+                    </label>
+
+                    <input type="email"
+                           placeholder="correo@ejemplo.com"
+                           id="correo"
+                           name="correo">
+
+                    <p id="error-correo"
+                       class="error">
+                    </p>
+
+                </section>
+
+
+                <!-- Teléfono -->
+                <section class="formulario">
+
+                    <label for="telefono">
+                        Teléfono:
+                    </label>
+
+                    <input type="tel"
+                           placeholder="123456789"
+                           id="telefono"
+                           name="telefono">
+
+                    <p id="error-telefono"
+                       class="error">
+                    </p>
+
+                </section>
+
+
+                <!-- Mensaje -->
+                <section class="formulario">
+
+                    <label for="mensaje">
+                        Mensaje:
+                    </label>
+
+                    <textarea placeholder="Escriba en este cuadro su mensaje..."
+                              id="mensaje"
+                              name="mensaje"
+                              maxlength="300"></textarea>
+
+                    <p id="error-mensaje"
+                       class="error">
+                    </p>
+
+                </section>
+
+
+                <!-- Botón -->
+                <button class="sendMessage"
+                        type="submit">
+                    Enviar Mensaje
+                </button>
+
+
+                <!-- Mensaje de validación -->
+                <p id="mensaje-enviado">
+                </p>
+
+            </form>
+
+        </section>
+
     </main>
+
+
+
     <footer>
-        <p>Horario de Atencion:</p>
-        <p>Lunes a Viernes de 08:00 a 22:00 hrs</p>
-        <p>Sabados y Domingos de 09:00 a 19:00 hrs</p>
-        <p>&copy;2026 La Parada del Medio</p>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
     </footer>
+
+
+    <!-- JS del formulario -->
     <script src="js/contacto.js"></script>
+
+    <!-- JS general del menú -->
+    <script src="js/index.js"></script>
+
 </body>
+
 </html>

@@ -1,52 +1,643 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Parada Del Medio - Productos</title>
+    <title>Productos - La Parada del Medio</title>
+
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/productos.css">
 </head>
 <body>
     <header>
-        <h1>La Parada del Medio</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="carrito.html">Carrito</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Productos</h2>
-        <section>
-            <h3>Lacteos</h3>
-            <div class="contenedor-productos">
-                <article class="producto">
-                    <h4>Mantequilla Soprole c/Sal</h4>
-                    <img src="img/Productos/Lacteos/mantequilla.jpg" alt="Mantequilla Soprole 250grs con Sal" class="imagen-producto">
-                    <p>$ 3.290</p>
-                    <button class="agregar-carrito">Agregar al Carrito</button>
-                </article>
-                <article class="producto">
-                    <h4>Yogurth Griego</h4>
-                    <img src="img/Productos/Lacteos/yogurth.jpg" alt="Yogurth Griego 140 cc" class="imagen-producto">
-                    <p>$ 1.000</p>
-                    <button class="agregar-carrito">Agregar al Carrito</button>
-                </article>
-                <article class="producto">
-                    <h4>Loncoleche Protein Chocolate 1 Litro</h4>
-                    <img src="img/Productos/Lacteos/loncoleche.jpg" alt="Loncoleche Protein Chocolate 1 Litro" class="imagen-producto">
-                    <p>$ 2.630</p>
-                    <button class="agregar-carrito">Agregar al Carrito</button>
-                </article>
+
+        <!-- Banner principal -->
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+
+        <!-- Barra de navegación -->
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+
+            <!-- Botón menú hamburguesa para celular -->
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+
+            <!-- Enlaces principales -->
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="productos.html" class="active">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
             </div>
-        </section>
+
+
+            <!-- Buscador -->
+            <section class="buscador-nav">
+
+                <label for="busqueda" class="bus-pro">
+                    Buscar Producto
+                </label>
+
+                <input type="text"
+                       placeholder="Buscar Productos..."
+                       id="busqueda"
+                       class="bus-pro">
+
+                <button type="button"
+                        class="buscar-producto">
+                    Buscar
+                </button>
+
+            </section>
+
+
+            <!-- Indicador de carrito -->
+            <a href="carrito.html" class="carrito">
+
+                🛒 Carrito
+                (<span id="cantidad-carrito">0</span>)
+
+            </a>
+
+        </nav>
+
+
+        <!-- Bienvenida + acceso a sesión -->
+        <div class="welcome">
+
+            <section class="bienvenida">
+
+                <h2>
+                    Bienvenidos a La Parada del Medio
+                </h2>
+
+                <p>
+                    Encuentra productos para tu hogar,
+                    alimentos, bebidas y mucho más.
+                </p>
+
+            </section>
+
+
+            <section class="ini-ses">
+
+                <a href="sesion.html">
+
+                    <img src="img/logo/sesion.png"
+                         alt="Iniciar Sesión"
+                         class="ini-sesion">
+
+                </a>
+
+            </section>
+
+        </div>
+
+    </header>
+
+        <main>
+                <nav class="nav-categorias">
+
+                    <a href="#abarrotes">Abarrotes</a>
+
+                    <a href="#bebidas">Bebidas</a>
+
+                    <a href="#snacks">Snacks</a>
+
+                    <a href="#lacteos">Lácteos</a>
+
+                    <a href="#bebe">Bebé</a>
+
+                    <a href="#limpieza">Limpieza</a>
+
+                </nav>
+        <h2>Productos</h2>
+                    <section id="abarrotes" class="seccion-productos">
+
+                        <h2>Abarrotes</h2>
+                    
+                        <div class="contenedor-productos">
+                            
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/arroz.png" alt="Arroz" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/spaghetti.png" alt="Spaghetti" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/harina.png" alt="Harina" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/azucar.png" alt="Azucar" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/aceite.png" alt="Aceite" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/lentejas.png" alt="Lentejas" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/atun.png" alt="Atun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/salsa-tomate.png" alt="Salsa_Tomate" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/cafe.png" alt="Cafe" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/te.png" alt="Te" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/sal.png" alt="Sal" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Abarrotes/cereal.png" alt="Cereal" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+                        </div>
+
+                    </section>
+
+                    <section id="bebidas" class="seccion-productos">
+
+                        <h2>Bebidas</h2>
+
+                        <div class="contenedor-productos">
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/bilzpap.png" alt="Bilz y Pap" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/cocacola.png" alt="Coca-Cola" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/cocazero.png" alt="Coca-Cola Zero" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/fanta.png" alt="Fanta" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/gingerale.png" alt="Ginger Ale" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/monster.png" alt="Monster Energy" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/nectar.png" alt="Néctar Watts" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/nestea.png" alt="Nestea" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/redbull.png" alt="Red Bull" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/sprite.png" alt="Sprite" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/vital.png" alt="Agua Vital" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebidas/jugo_watts.png" alt="Jugo Watts" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <section id="snacks" class="seccion-productos">
+
+                        <h2>Snacks</h2>
+
+                        <div class="contenedor-productos">
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/cheetos.png" alt="Cheetos" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/chococosta.png" alt="Chococosta" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/doritos.png" alt="Doritos" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/jumbo_mani.png" alt="Maní Jumbo" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/kitkat.png" alt="KitKat" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/lays.png" alt="Papas Lay's" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/mms.png" alt="M&M's" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/prince.png" alt="Galletas Prince" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/pringles.png" alt="Pringles" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/ritz.png" alt="Galletas Ritz" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/snickers.png" alt="Snickers" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Snacks/trululu.png" alt="Trululu Ositos" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <section id="lacteos" class="seccion-productos">
+
+                        <h2>Lácteos</h2>
+
+                        <div class="contenedor-productos">
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/leche_soprole.png" alt="Leche Soprole Entera" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/yoghurt_soprole.png" alt="Yoghurt Soprole Frutilla" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/mantequilla_soprole.png" alt="Mantequilla Soprole" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/queso_gauda.png" alt="Queso Gauda Colun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/loncoleche_protein.png" alt="Loncoleche Protein Chocolate" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/yoghurt_griego.png" alt="Yoghurt Griego Nestlé" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/crema_leche.png" alt="Crema de Leche Colun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/leche_condensada.png" alt="Leche Condensada Nestlé" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/queso_mozzarella.png" alt="Queso Mozzarella Colun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/queso_fresco.png" alt="Queso Fresco Colun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/leche_cultivada.png" alt="Leche Cultivada Soprole" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Lacteos/queso_crema.png" alt="Queso Crema Colun" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <section id="bebe" class="seccion-productos">
+
+                        <h2>Bebé</h2>
+
+                        <div class="contenedor-productos">
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/panales_babysec_ultra.png" alt="Pañales Babysec Ultra" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/nan_3_optipro.png" alt="Fórmula NAN 3 Optipro" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/shampoo_johnsons.png" alt="Champú Johnson's Dulces Sueños" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/locion_johnsons.png" alt="Loción Johnson's Hidratación Intensa" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/toallitas_huggies.png" alt="Toallitas Húmedas Huggies" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/nan_4_optipro.png" alt="Fórmula NAN 4 Optipro" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/papilla_gerber.png" alt="Papilla Gerber Natural" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/panales_huggies.png" alt="Pañales Huggies Supreme Care" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/cereal_cerelac.png" alt="Cereal Cerelac Trigo Miel Leche" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/panales_babysec_premium.png" alt="Pañales Babysec Premium" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/panales_cotidian.png" alt="Pañales Cotidian Plus" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Bebe/chupete_avent.png" alt="Chupete Avent Clásico" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                        </div>
+
+                    </section>
+                    <section id="limpieza" class="seccion-productos">
+                        <h2>Limpieza</h2>
+
+                        <div class="contenedor-productos">
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/detergente_drive.png" alt="Detergente Drive" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/detergente_rinso.png" alt="Detergente Rinso" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/suavizante_arom.png" alt="Suavizante Arom" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/lavalozas_quix_limon.png" alt="Lavalozas Quix Limon" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/lavalozas_quix_glicerina.png" alt="Lavalozas Quix Glicerina" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/lavalozas_quix_antigrasa.png" alt="Lavalozas Quix Antigrasa" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/cloro_clorinda_tradicional.png" alt="Cloro Clorinda Tradicional" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/cloro_clorinda_lavanda.png" alt="Cloro Clorinda Lavanda" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/clorox_bano.png" alt="Clorox Baño" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/limpiapisos_fuzol_mar.png" alt="Limpiapisos Fuzol Aroma Mar" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/limpiapisos_fuzol_lavanda.png" alt="Limpiapisos Fuzol Lavanda" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/cif_bano.png" alt="Cif Baño" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/cif_crema.png" alt="Cif Crema" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/limpiavidrios_excell.png" alt="Limpiavidrios Excell" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/esponjas_virginia.png" alt="Esponjas Virginia" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/nova_clasica.png" alt="Nova Clasica" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/papel_higienico_confort.png" alt="Papel Higienico Confort" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+
+                            <article class="producto">
+                                <img src="img/Productos/Limpieza/bolsas_basura_virutex.png" alt="Bolsas de Basura Virutex" class="imagen-producto">
+                                <button class="agregar-carrito">Agregar</button>
+                            </article>
+                            
+                        </div>
+                    </section>
     </main>
+
     <footer>
-        <p>Horario de Atencion:</p>
-        <p>Lunes a Viernes de 08:00 a 22:00 hrs</p>
-        <p>Sabados y Domingos de 09:00 a 19:00 hrs</p>
-        <p>&copy;2026 La Parada del Medio</p>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>
+                    Horario de Atención
+                </h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>
+                    Contacto
+                </h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
     </footer>
 </body>
 </html>
