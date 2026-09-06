@@ -172,6 +172,10 @@ div.selector-cantidad button:hover{
     background-color:darkolivegreen;
 }
 
+div.selector-cantidad button:active{
+    transform: scale(0.95);
+}
+
 
 /* Numero de unidades */
 span.cantidad{
@@ -202,11 +206,18 @@ button.agregar-carrito{
 
     border: 1px solid grey;
 
+    background-color:forestgreen;
+
     cursor: pointer;
 }
 
 button.agregar-carrito:hover{
-    background-color: aquamarine;
+    background-color:chartreuse;
+    transform: scale(1.08);
+}
+
+button.agregar-carrito:active{
+    transform: scale(0.95);
 }
 
 

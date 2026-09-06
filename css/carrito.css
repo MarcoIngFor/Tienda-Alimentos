@@ -185,6 +185,9 @@
     background-color: #a90f0f;
 }
 
+.cantidad-producto-carrito button:active{
+    transform: scale(0.95);
+}
 
 /* =========================
    SUBTOTAL DEL PRODUCTO
