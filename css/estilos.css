@@ -112,44 +112,13 @@ nav div.enlaces-nav a:hover{
 
 
 /* =========================
-   BUSCADOR
-========================= */
-
-section.buscador-nav{
-    margin-left: auto;
-
-    padding: 10px;
-}
-
-
-label.bus-pro{
-    color: white;
-}
-
-
-input.bus-pro{
-    height: 25px;
-}
-
-
-button.buscar-producto{
-    padding: 8px;
-
-    color: white;
-
-    background-color: darkslategrey;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
    CARRITO EN NAV
 ========================= */
 
 nav.navegador a.carrito{
+    margin-left: auto;
+    margin-right: 20px;
+    
     padding: 15px;
 
     color: white;
@@ -620,11 +589,6 @@ p.copyright{
         margin-left: 0;
 
         text-align: center;
-    }
-
-
-    input.bus-pro{
-        width: 60%;
     }
 
 
