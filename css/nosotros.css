@@ -3,12 +3,14 @@
     padding: 30px 20px;
 }
 
-.video-proyecto h2{
-    color: darkgreen;
-}
+.video-presentacion{
+    width: 100%;
+    max-width: 1200px;
 
-.video-proyecto iframe{
-    max-width: 100%;
-    border: none;
+    aspect-ratio: 16 / 9;
+
     border-radius: 10px;
+
+    display: block;
+    margin: 0 auto;
 }

@@ -21,3 +21,20 @@ function siguienteSlide(){
 
 setInterval(siguienteSlide, 3000);
 setInterval(siguienteSlide,3000);
+
+function actualizarCantidadCarrito() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const contador = document.querySelector("#cantidad-carrito");
+
+    if (!contador) return;
+
+    let totalUnidades = 0;
+
+    carrito.forEach(function(producto) {
+        totalUnidades += producto.cantidad;
+    });
+
+    contador.textContent = totalUnidades;
+}
+
+actualizarCantidadCarrito();

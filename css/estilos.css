@@ -477,53 +477,6 @@ img.imagen-categoria:hover{
     transform: scale(1.03);
 }
 
-
-/* =========================
-   PAGINA NOSOTROS
-========================= */
-
-section.sobre-nosotros{
-    max-width: 1000px;
-
-    margin: 40px auto;
-
-    padding: 30px;
-
-    background-color: white;
-
-    border-radius: 10px;
-
-    color: darkslategrey;
-}
-
-
-section.sobre-nosotros h2{
-    text-align: center;
-
-    color: darkgreen;
-
-    font-size: 30px;
-}
-
-
-section.sobre-nosotros p{
-    font-size: 18px;
-
-    line-height: 1.6;
-
-    text-align: justify;
-}
-
-
-p.mensaje-proyecto{
-    color: darkgreen;
-
-    font-weight: bold;
-
-    text-align: center;
-}
-
-
 /* =========================
    FOOTER
 ========================= */
