@@ -1,0 +1,14 @@
+.video-proyecto{
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.video-proyecto h2{
+    color: darkgreen;
+}
+
+.video-proyecto iframe{
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+}

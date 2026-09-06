@@ -1,0 +1,399 @@
+/* =========================
+   PAGINA DEL CARRITO
+========================= */
+
+.carrito-contenido{
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TITULO
+========================= */
+
+.carrito-contenido h1{
+    text-align: center;
+
+    color: darkgreen;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   LISTA DE PRODUCTOS
+========================= */
+
+#lista-carrito{
+    width: 100%;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   ENCABEZADO DEL CARRITO
+========================= */
+
+.encabezado-carrito{
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr 100px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 10px 0;
+
+    border-bottom: 2px solid darkgreen;
+
+    color: darkgreen;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.encabezado-carrito span:first-child{
+    text-align: left;
+}
+
+
+/* =========================
+   PRODUCTO DENTRO DEL CARRITO
+========================= */
+
+.producto-carrito{
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr 100px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid lightgrey;
+}
+
+
+/* =========================
+   IMAGEN DEL PRODUCTO
+========================= */
+
+.imagen-carrito{
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   INFORMACION DEL PRODUCTO
+========================= */
+
+.nombre-producto-carrito{
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+.nombre-producto-carrito h3{
+    margin: 0;
+
+    color: darkgreen;
+}
+
+
+/* =========================
+   PRECIO DEL PRODUCTO
+========================= */
+
+.precio-producto-carrito{
+    text-align: center;
+
+    font-weight: bold;
+
+    color: darkgreen;
+}
+
+.precio-producto-carrito p{
+    margin: 0;
+}
+
+
+/* =========================
+   CANTIDAD DEL PRODUCTO
+========================= */
+
+.cantidad-producto-carrito{
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.cantidad-producto-carrito span{
+    min-width: 25px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.cantidad-producto-carrito button{
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #d71919;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.cantidad-producto-carrito button:hover{
+    background-color: #a90f0f;
+}
+
+
+/* =========================
+   SUBTOTAL DEL PRODUCTO
+========================= */
+
+.subtotal-producto-carrito{
+    text-align: center;
+
+    font-weight: bold;
+
+    color: darkgreen;
+}
+
+.subtotal-producto-carrito p{
+    margin: 0;
+}
+
+
+/* =========================
+   BOTON ELIMINAR
+========================= */
+
+.eliminar-producto{
+    padding: 8px 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: lightcoral;
+
+    cursor: pointer;
+}
+
+.eliminar-producto:hover{
+    background-color: indianred;
+
+    color: white;
+}
+
+
+/* =========================
+   RESUMEN DE COMPRA
+========================= */
+
+.resumen-carrito{
+    padding: 20px;
+
+    border-top: 2px solid darkgreen;
+
+    text-align: right;
+}
+
+.resumen-carrito h2{
+    color: darkgreen;
+
+    margin-bottom: 15px;
+}
+
+.resumen-carrito p{
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   BOTONES DEL RESUMEN
+========================= */
+
+#vaciar-carrito,
+#finalizar-compra{
+    padding: 10px 20px;
+
+    margin: 10px 5px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#vaciar-carrito{
+    background-color: lightcoral;
+}
+
+#vaciar-carrito:hover{
+    background-color: indianred;
+
+    color: white;
+}
+
+#finalizar-compra{
+    background-color: darkgreen;
+
+    color: white;
+}
+
+#finalizar-compra:hover{
+    background-color: green;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px){
+
+    .encabezado-carrito,
+    .producto-carrito{
+        grid-template-columns: 2fr 1fr 1fr 1fr 90px;
+
+        gap: 10px;
+    }
+
+    .imagen-carrito{
+        width: 75px;
+
+        height: 75px;
+    }
+
+    .nombre-producto-carrito h3{
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media (max-width: 600px){
+
+    .carrito-contenido{
+        width: 90%;
+
+        padding: 15px;
+    }
+
+
+    /* Ocultamos encabezados porque en celular
+       ya no se verá como tabla */
+    .encabezado-carrito{
+        display: none;
+    }
+
+
+    .producto-carrito{
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 12px;
+
+        padding: 20px 0;
+    }
+
+
+    .nombre-producto-carrito{
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .imagen-carrito{
+        width: 120px;
+
+        height: 120px;
+    }
+
+
+    .precio-producto-carrito{
+        text-align: center;
+    }
+
+
+    .cantidad-producto-carrito{
+        justify-content: center;
+    }
+
+
+    .subtotal-producto-carrito{
+        text-align: center;
+    }
+
+
+    .eliminar-producto{
+        width: 150px;
+
+        margin: auto;
+    }
+
+
+    .resumen-carrito{
+        text-align: center;
+    }
+
+
+    #vaciar-carrito,
+    #finalizar-compra{
+        width: 100%;
+
+        margin: 5px 0;
+    }
+
+}

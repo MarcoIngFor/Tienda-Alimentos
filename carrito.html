@@ -1,19 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Parada Del Medio - Carrito</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Carrito - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
+
 <body>
+
     <header>
-        <h1>La Parada del Medio</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="carrito.html">Carrito</a>
+
+        <!-- Banner principal -->
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                alt="La Parada del Medio"
+                class="banner-header">
+        </a>
+
+        <!-- Barra de navegación -->
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                alt="Logo La Parada del Medio"
+                class="logo-nav">
+
+            <!-- Menú hamburguesa -->
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+            <!-- Enlaces -->
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
+            </div>
+
+            <!-- Buscador -->
+            <section class="buscador-nav">
+
+                <label for="busqueda" class="bus-pro">
+                    Buscar Producto
+                </label>
+
+                <input type="text"
+                    placeholder="Buscar Productos..."
+                    id="busqueda"
+                    class="bus-pro">
+
+                <button type="button"
+                        class="buscar-producto">
+                    Buscar
+                </button>
+
+            </section>
+
+            <!-- Carrito -->
+            <a href="carrito.html" class="carrito">
+                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+            </a>
+
         </nav>
+
+        <!-- Encabezado visual -->
+        <div class="welcome">
+
+            <section class="bienvenida">
+
+                <h2>Tus Productos</h2>
+
+                <p>
+                    Estan Aqui para retiro en Local.
+                </p>
+
+            </section>
+
+            <!-- Iniciar sesión -->
+            <section class="ini-ses">
+
+                <a href="sesion.html">
+
+                    <img src="img/logo/sesion.png"
+                        alt="Iniciar Sesión"
+                        class="ini-sesion">
+
+                </a>
+
+            </section>
+
+        </div>
+
     </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+    <section class="carrito-contenido">
+
+        <h1>Mi Carrito</h1>
+
+        <div class="encabezado-carrito">
+            <span>Producto</span>
+            <span>Precio</span>
+            <span>Cantidad</span>
+            <span>Subtotal</span>
+            <span>Acción</span>
+        </div>
+        <div id="lista-carrito">
+            <!-- Aquí JavaScript mostrará los productos -->
+        </div>
+
+        <section class="resumen-carrito">
+
+            <h2>Resumen de Compra</h2>
+
+            <p>
+                Total:
+                <span id="total-carrito">$0</span>
+            </p>
+
+            <button type="button" id="vaciar-carrito">
+                Vaciar Carrito
+            </button>
+
+            <button type="button" id="finalizar-compra">
+                Finalizar Compra
+            </button>
+
+        </section>
+
+    </section>
+
+</main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>Lunes a Viernes de 08:00 a 22:00 hrs</p>
+
+                <p>Sábados y Domingos de 09:00 a 19:00 hrs</p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>Teléfono: +56 9 12345678</p>
+
+                <p>Correo: contacto@laparadadelmedio.cl</p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/carrito.js"></script>
+
 </body>
+
 </html>
