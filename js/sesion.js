@@ -1,3 +1,97 @@
+// =========================
+// USUARIOS DE DEMOSTRACION
+// =========================
+
+function inicializarUsuariosDemo() {
+
+    let usuarios =
+        JSON.parse(
+            localStorage.getItem("usuarios")
+        ) || [];
+
+
+    const usuariosDemo = [
+
+        {
+            run: "190110222",
+            nombre: "Administrador",
+            apellido: "Demo",
+            correo: "admin@gmail.com",
+            password: "admin123",
+            fechaNacimiento: "",
+            tipoUsuario: "admin",
+            region: "metropolitana",
+            comuna: "Cerrillos",
+            direccion: "La Parada del Medio"
+        },
+
+        {
+            run: "165444787",
+            nombre: "Vendedor",
+            apellido: "Demo",
+            correo: "vendedor@gmail.com",
+            password: "vende123",
+            fechaNacimiento: "",
+            tipoUsuario: "vendedor",
+            region: "metropolitana",
+            comuna: "Maipú",
+            direccion: "La Parada del Medio"
+        },
+
+        {
+            run: "247969802",
+            nombre: "Cliente",
+            apellido: "Demo",
+            correo: "cliente@gmail.com",
+            password: "cliente1",
+            fechaNacimiento: "",
+            tipoUsuario: "cliente",
+            region: "metropolitana",
+            comuna: "Cerrillos",
+            direccion: "La Parada del Medio"
+        }
+
+    ];
+
+
+    usuariosDemo.forEach(
+        function(usuarioDemo) {
+
+            const existe =
+                usuarios.some(
+                    function(usuario) {
+
+                        return (
+                            usuario.correo ===
+                            usuarioDemo.correo
+                        );
+
+                    }
+                );
+
+
+            if (!existe) {
+
+                usuarios.push(
+                    usuarioDemo
+                );
+
+            }
+
+        }
+    );
+
+
+    localStorage.setItem(
+        "usuarios",
+        JSON.stringify(usuarios)
+    );
+
+}
+
+
+inicializarUsuariosDemo();
+
 const formularioLogin =
     document.querySelector("#form-login");
 
