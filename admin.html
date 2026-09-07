@@ -4,40 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
 
-    <title>Contacto - La Parada del Medio</title>
+    <title>Panel Administración - La Parada del Medio</title>
 
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
 
     <header>
 
-        <!-- Banner principal -->
         <a href="index.html">
             <img src="img/logo/banner.png"
-                alt="La Parada del Medio"
-                class="banner-header">
+                 alt="La Parada del Medio"
+                 class="banner-header">
         </a>
 
-        <!-- Barra de navegación -->
+
         <nav class="navegador">
 
             <img src="img/logo/logo.png"
-                alt="Logo La Parada del Medio"
-                class="logo-nav">
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
 
-            <!-- Menú hamburguesa -->
-            <button class="menu-hamburguesa"
-                    id="menu-hamburguesa"
-                    type="button">
-                ☰
-            </button>
 
-            <!-- Enlaces -->
-            <div class="enlaces-nav" id="enlaces-nav">
+            <div class="enlaces-nav">
 
                 <a href="index.html">
                     Inicio
@@ -51,11 +43,16 @@
                     Nosotros
                 </a>
 
+                <a href="blog.html">
+                    Blog
+                </a>
+
                 <a href="contacto.html">
                     Contacto
                 </a>
 
             </div>
+
 
             <button type="button"
                     id="cerrar-sesion"
@@ -65,88 +62,126 @@
 
         </nav>
 
-        <!-- Encabezado visual -->
-        <div class="welcome">
-
-            <section class="bienvenida">
-
-                <h2>Panel Administracion</h2>
-
-                <p>
-                    Bienvenido Administrador
-                </p>
-
-            </section>
-
-        </div>
-
     </header>
 
 
     <main>
 
+        <!-- =========================
+             BIENVENIDA
+        ========================== -->
+
+        <section class="bienvenida-admin">
+
+            <h1>
+                Panel Administración
+            </h1>
+
+            <p id="bienvenida-admin">
+                Bienvenido
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             PANEL ADMIN
+        ========================== -->
+
         <section class="panel-admin">
+
+
+            <!-- PRODUCTOS -->
 
             <article class="tarjeta-admin">
 
-                <h2>📦 Productos</h2>
+                <h2>
+                    📦 Productos
+                </h2>
 
                 <p>
                     Gestionar los productos disponibles en la tienda.
                 </p>
 
-                <button type="button"
-                        class="boton-admin">
+                <a href="admin-productos.html"
+                   class="boton-admin">
                     Gestionar Productos
-                </button>
+                </a>
 
             </article>
 
 
+
+            <!-- USUARIOS -->
+
+            <article class="tarjeta-admin"
+                     id="tarjeta-usuarios">
+
+                <h2>
+                    👥 Usuarios
+                </h2>
+
+                <p>
+                    Gestionar los usuarios registrados en el sistema.
+                </p>
+
+                <a href="admin-usuarios.html"
+                   class="boton-admin">
+                    Gestionar Usuarios
+                </a>
+
+            </article>
+
+
+
+            <!-- PEDIDOS -->
+
             <article class="tarjeta-admin">
 
-                <h2>🛒 Pedidos</h2>
+                <h2>
+                    🛒 Pedidos
+                </h2>
 
                 <p>
                     Revisar los pedidos realizados por los clientes.
                 </p>
 
                 <button type="button"
-                        class="boton-admin">
-                    Ver Pedidos
+                        class="boton-admin boton-deshabilitado"
+                        disabled>
+                    Próximamente
                 </button>
 
             </article>
 
 
-            <article class="tarjeta-admin">
 
-                <h2>✉️ Mensajes</h2>
+            <!-- RESUMEN -->
 
-                <p>
-                    Revisar los mensajes enviados desde el formulario de contacto.
-                </p>
+            <article class="tarjeta-admin"
+                     id="tarjeta-resumen">
 
-                <button type="button"
-                        class="boton-admin">
-                    Ver Mensajes
-                </button>
-
-            </article>
-
-
-            <article class="tarjeta-admin">
-
-                <h2>📊 Resumen</h2>
+                <h2>
+                    📊 Resumen
+                </h2>
 
                 <p>
-                    Revisar información general de la tienda.
+                    Revisar información general del sistema.
                 </p>
 
-                <button type="button"
-                        class="boton-admin">
-                    Ver Resumen
-                </button>
+                <p>
+                    Usuarios registrados:
+                    <span id="total-usuarios">
+                        0
+                    </span>
+                </p>
+
+                <p>
+                    Productos disponibles:
+                    <span id="total-productos">
+                        0
+                    </span>
+                </p>
 
             </article>
 
@@ -155,10 +190,10 @@
     </main>
 
 
-
     <footer>
 
         <div class="contenido-footer">
+
 
             <section class="footer-negocio">
 
@@ -175,7 +210,9 @@
 
             <section class="footer-horario">
 
-                <h3>Horario de Atención</h3>
+                <h3>
+                    Horario de Atención
+                </h3>
 
                 <p>
                     Lunes a Viernes de 08:00 a 22:00 hrs
@@ -190,7 +227,9 @@
 
             <section class="footer-contacto">
 
-                <h3>Contacto</h3>
+                <h3>
+                    Contacto
+                </h3>
 
                 <p>
                     Teléfono: +56 9 12345678
@@ -202,6 +241,7 @@
 
             </section>
 
+
         </div>
 
 
@@ -211,8 +251,8 @@
 
     </footer>
 
-    <!-- JS general del menú -->
-    <script src="js/index.js"></script>
+
+    <script src="js/admin.js"></script>
 
 </body>
 

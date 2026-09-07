@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
 
     <title>Contacto - La Parada del Medio</title>
 
@@ -15,29 +14,29 @@
 
     <header>
 
-        <!-- Banner principal -->
         <a href="index.html">
             <img src="img/logo/banner.png"
-                alt="La Parada del Medio"
-                class="banner-header">
+                 alt="La Parada del Medio"
+                 class="banner-header">
         </a>
 
-        <!-- Barra de navegación -->
+
         <nav class="navegador">
 
             <img src="img/logo/logo.png"
-                alt="Logo La Parada del Medio"
-                class="logo-nav">
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
 
-            <!-- Menú hamburguesa -->
+
             <button class="menu-hamburguesa"
                     id="menu-hamburguesa"
                     type="button">
                 ☰
             </button>
 
-            <!-- Enlaces -->
-            <div class="enlaces-nav" id="enlaces-nav">
+
+            <div class="enlaces-nav"
+                 id="enlaces-nav">
 
                 <a href="index.html">
                     Inicio
@@ -51,25 +50,36 @@
                     Nosotros
                 </a>
 
-                <a href="contacto.html" class="active">
+                <a href="blog.html">
+                    Blog
+                </a>
+
+                <a href="contacto.html"
+                   class="active">
                     Contacto
                 </a>
 
             </div>
 
-            <!-- Carrito -->
-            <a href="carrito.html" class="carrito">
-                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+
+            <a href="carrito.html"
+               class="carrito">
+
+                🛒 Carrito
+                (<span id="cantidad-carrito">0</span>)
+
             </a>
 
         </nav>
 
-        <!-- Encabezado visual -->
+
         <div class="welcome">
 
             <section class="bienvenida">
 
-                <h2>Contacto</h2>
+                <h2>
+                    Contacto
+                </h2>
 
                 <p>
                     Escríbenos y nos pondremos en contacto contigo.
@@ -77,14 +87,14 @@
 
             </section>
 
-            <!-- Iniciar sesión -->
+
             <section class="ini-ses">
 
                 <a href="sesion.html">
 
                     <img src="img/logo/sesion.png"
-                        alt="Iniciar Sesión"
-                        class="ini-sesion">
+                         alt="Iniciar Sesión"
+                         class="ini-sesion">
 
                 </a>
 
@@ -99,13 +109,17 @@
 
         <section class="formulario-contacto">
 
-            <h2>Formulario de Contacto</h2>
+            <h2>
+                Formulario de Contacto
+            </h2>
 
 
-            <!-- Formulario -->
-            <form class="form">
+            <form class="form"
+                  id="form-contacto">
 
-                <!-- Nombre -->
+
+                <!-- NOMBRE -->
+
                 <section class="formulario">
 
                     <label for="nombre">
@@ -113,19 +127,21 @@
                     </label>
 
                     <input type="text"
-                           placeholder="Ingrese sus Nombres ..."
                            id="nombre"
                            name="nombre"
+                           maxlength="100"
+                           placeholder="Ingrese sus nombres..."
                            autocomplete="given-name">
 
                     <p id="error-nombre"
-                       class="error">
-                    </p>
+                       class="error"></p>
 
                 </section>
 
 
-                <!-- Apellido -->
+
+                <!-- APELLIDOS -->
+
                 <section class="formulario">
 
                     <label for="apellido">
@@ -133,19 +149,21 @@
                     </label>
 
                     <input type="text"
-                           placeholder="Ingrese sus Apellidos ..."
                            id="apellido"
                            name="apellido"
+                           maxlength="100"
+                           placeholder="Ingrese sus apellidos..."
                            autocomplete="family-name">
 
                     <p id="error-apellido"
-                       class="error">
-                    </p>
+                       class="error"></p>
 
                 </section>
 
 
-                <!-- Correo -->
+
+                <!-- CORREO -->
+
                 <section class="formulario">
 
                     <label for="correo">
@@ -153,19 +171,21 @@
                     </label>
 
                     <input type="email"
-                           placeholder="correo@ejemplo.com"
                            id="correo"
                            name="correo"
+                           maxlength="100"
+                           placeholder="correo@gmail.com"
                            autocomplete="email">
 
                     <p id="error-correo"
-                       class="error">
-                    </p>
+                       class="error"></p>
 
                 </section>
 
 
-                <!-- Teléfono -->
+
+                <!-- TELEFONO -->
+
                 <section class="formulario">
 
                     <label for="telefono">
@@ -173,47 +193,48 @@
                     </label>
 
                     <input type="tel"
-                           placeholder="123456789"
                            id="telefono"
                            name="telefono"
+                           maxlength="9"
+                           placeholder="123456789"
                            autocomplete="tel">
 
                     <p id="error-telefono"
-                       class="error">
-                    </p>
+                       class="error"></p>
 
                 </section>
 
 
-                <!-- Mensaje -->
+
+                <!-- MENSAJE -->
+
                 <section class="formulario">
 
                     <label for="mensaje">
                         Mensaje:
                     </label>
 
-                    <textarea placeholder="Escriba en este cuadro su mensaje..."
-                              id="mensaje"
+                    <textarea id="mensaje"
                               name="mensaje"
-                              maxlength="300"></textarea>
+                              maxlength="500"
+                              placeholder="Escriba en este cuadro su mensaje..."></textarea>
 
                     <p id="error-mensaje"
-                       class="error">
-                    </p>
+                       class="error"></p>
 
                 </section>
 
 
-                <!-- Botón -->
+
+                <!-- BOTON -->
+
                 <button class="sendMessage"
                         type="submit">
                     Enviar Mensaje
                 </button>
 
 
-                <!-- Mensaje de validación -->
-                <p id="mensaje-enviado">
-                </p>
+                <p id="mensaje-enviado"></p>
 
             </form>
 
@@ -222,10 +243,10 @@
     </main>
 
 
-
     <footer>
 
         <div class="contenido-footer">
+
 
             <section class="footer-negocio">
 
@@ -242,7 +263,9 @@
 
             <section class="footer-horario">
 
-                <h3>Horario de Atención</h3>
+                <h3>
+                    Horario de Atención
+                </h3>
 
                 <p>
                     Lunes a Viernes de 08:00 a 22:00 hrs
@@ -257,7 +280,9 @@
 
             <section class="footer-contacto">
 
-                <h3>Contacto</h3>
+                <h3>
+                    Contacto
+                </h3>
 
                 <p>
                     Teléfono: +56 9 12345678
@@ -279,10 +304,8 @@
     </footer>
 
 
-    <!-- JS del formulario -->
     <script src="js/contacto.js"></script>
 
-    <!-- JS general del menú -->
     <script src="js/index.js"></script>
 
 </body>

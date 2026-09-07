@@ -1,0 +1,363 @@
+/* =========================
+   ADMIN PRODUCTOS
+========================= */
+
+.admin-contenido{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+
+.admin-contenido h1{
+    text-align: center;
+
+    color: darkgreen;
+}
+
+
+/* =========================
+   MENSAJE ROL
+========================= */
+
+.mensaje-rol{
+    text-align: center;
+
+    color: darkgreen;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FORMULARIO PRODUCTO
+========================= */
+
+.form-admin-producto{
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: darkslategrey;
+}
+
+
+.form-admin-producto h2{
+    color: darkgreen;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.form-admin-producto input{
+    width: 300px;
+
+    max-width: 100%;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.form-admin-producto select{
+    width: 300px;
+
+    max-width: 100%;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form-admin-producto textarea{
+    width: 300px;
+
+    max-width: 100%;
+
+    min-height: 100px;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   LISTADO
+========================= */
+
+.listado-admin-productos{
+    margin-top: 40px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+
+.listado-admin-productos h2{
+    text-align: center;
+
+    color: darkgreen;
+}
+
+
+/* =========================
+   LEYENDA STOCK
+========================= */
+
+.leyenda-stock{
+    text-align: center;
+
+    color: darkred;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   TABLA
+========================= */
+
+.tabla-responsive{
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.tabla-admin-productos{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    color: darkslategrey;
+}
+
+
+.tabla-admin-productos th,
+.tabla-admin-productos td{
+    padding: 10px;
+
+    border: 1px solid grey;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+
+.tabla-admin-productos th{
+    background-color: darkgreen;
+
+    color: white;
+}
+
+
+.tabla-admin-productos tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+
+/* =========================
+   STOCK CRITICO
+========================= */
+
+.fila-stock-critico{
+    background-color: #ffd9d9 !important;
+
+    color: darkred;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.ver-producto-admin,
+.editar-producto-admin,
+.eliminar-producto-admin{
+    margin: 2px;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* VER */
+
+.ver-producto-admin{
+    border: none;
+
+    background-color: darkgreen;
+
+    color: white;
+}
+
+
+.ver-producto-admin:hover{
+    background-color: green;
+}
+
+
+/* EDITAR */
+
+.editar-producto-admin{
+    border: 1px solid grey;
+
+    background-color: lightgrey;
+
+    color: black;
+}
+
+
+.editar-producto-admin:hover{
+    background-color: silver;
+}
+
+
+/* ELIMINAR */
+
+.eliminar-producto-admin{
+    border: none;
+
+    background-color: darkred;
+
+    color: white;
+}
+
+
+.eliminar-producto-admin:hover{
+    background-color: red;
+}
+
+
+/* =========================
+   MENSAJE
+========================= */
+
+#mensaje-admin-producto{
+    margin-top: 15px;
+
+    color: darkgreen;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   BOTONES FORMULARIO
+========================= */
+
+.form-admin-producto .boton-admin{
+    margin: 5px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: darkgreen;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.form-admin-producto .boton-admin:hover{
+    background-color: green;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media(max-width: 900px){
+
+    .admin-contenido{
+        width: 95%;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media(max-width: 600px){
+
+    .admin-contenido{
+        width: 95%;
+    }
+
+
+    .form-admin-producto{
+        margin: 20px 10px;
+
+        padding: 20px;
+    }
+
+
+    .form-admin-producto input,
+    .form-admin-producto select,
+    .form-admin-producto textarea{
+        width: 100%;
+    }
+
+
+    .tabla-admin-productos{
+        min-width: 850px;
+    }
+
+
+    .ver-producto-admin,
+    .editar-producto-admin,
+    .eliminar-producto-admin{
+        padding: 5px 8px;
+
+        font-size: 13px;
+    }
+
+}

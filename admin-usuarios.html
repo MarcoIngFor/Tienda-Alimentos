@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrar Usuarios - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin-usuarios.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+            <div class="enlaces-nav">
+
+                <a href="admin.html">
+                    Panel Admin
+                </a>
+
+                <a href="admin-productos.html">
+                    Productos
+                </a>
+
+                <a href="admin-usuarios.html"
+                   class="active">
+                    Usuarios
+                </a>
+
+            </div>
+
+            <button type="button"
+                    id="cerrar-sesion"
+                    class="cerrar-sesion">
+                Cerrar Sesión
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main class="admin-contenido">
+
+        <h1>Administración de Usuarios</h1>
+
+
+        <section class="form-admin">
+
+            <h2 id="titulo-form-usuario">
+                Nuevo Usuario
+            </h2>
+
+            <form id="form-admin-usuario">
+
+                <input type="hidden"
+                       id="indice-usuario">
+
+
+                <!-- RUN -->
+                <section class="formulario">
+
+                    <label for="admin-run">
+                        RUN
+                    </label>
+
+                    <input type="text"
+                           id="admin-run"
+                           minlength="7"
+                           maxlength="9"
+                           placeholder="19011022K">
+
+                    <p id="error-admin-run"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- NOMBRE -->
+                <section class="formulario">
+
+                    <label for="admin-nombre">
+                        Nombre
+                    </label>
+
+                    <input type="text"
+                           id="admin-nombre"
+                           maxlength="50"
+                           autocomplete="given-name">
+
+                    <p id="error-admin-nombre"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- APELLIDOS -->
+                <section class="formulario">
+
+                    <label for="admin-apellido">
+                        Apellidos
+                    </label>
+
+                    <input type="text"
+                           id="admin-apellido"
+                           maxlength="100"
+                           autocomplete="family-name">
+
+                    <p id="error-admin-apellido"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- CORREO -->
+                <section class="formulario">
+
+                    <label for="admin-correo">
+                        Correo
+                    </label>
+
+                    <input type="email"
+                           id="admin-correo"
+                           maxlength="100"
+                           autocomplete="email">
+
+                    <p id="error-admin-correo"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- CONTRASEÑA -->
+                <section class="formulario">
+
+                    <label for="admin-password">
+                        Contraseña
+                    </label>
+
+                    <input type="password"
+                           id="admin-password"
+                           minlength="4"
+                           maxlength="10"
+                           autocomplete="new-password">
+
+                    <p id="error-admin-password"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- FECHA NACIMIENTO -->
+                <section class="formulario">
+
+                    <label for="admin-fecha">
+                        Fecha de Nacimiento
+                    </label>
+
+                    <input type="date"
+                           id="admin-fecha"
+                           autocomplete="bday">
+
+                </section>
+
+
+                <!-- TIPO USUARIO -->
+                <section class="formulario">
+
+                    <label for="admin-tipo">
+                        Tipo de Usuario
+                    </label>
+
+                    <select id="admin-tipo">
+
+                        <option value="">
+                            Seleccione un rol
+                        </option>
+
+                        <option value="admin">
+                            Administrador
+                        </option>
+
+                        <option value="cliente">
+                            Cliente
+                        </option>
+
+                        <option value="vendedor">
+                            Vendedor
+                        </option>
+
+                    </select>
+
+                    <p id="error-admin-tipo"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- REGION -->
+                <section class="formulario">
+
+                    <label for="admin-region">
+                        Región
+                    </label>
+
+                    <select id="admin-region">
+
+                        <option value="">
+                            Seleccione una región
+                        </option>
+
+                    </select>
+
+                    <p id="error-admin-region"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- COMUNA -->
+                <section class="formulario">
+
+                    <label for="admin-comuna">
+                        Comuna
+                    </label>
+
+                    <select id="admin-comuna">
+
+                        <option value="">
+                            Seleccione primero una región
+                        </option>
+
+                    </select>
+
+                    <p id="error-admin-comuna"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- DIRECCION -->
+                <section class="formulario">
+
+                    <label for="admin-direccion">
+                        Dirección
+                    </label>
+
+                    <input type="text"
+                           id="admin-direccion"
+                           maxlength="300"
+                           autocomplete="street-address">
+
+                    <p id="error-admin-direccion"
+                       class="error"></p>
+
+                </section>
+
+
+                <button type="submit"
+                        class="boton-admin">
+                    Guardar Usuario
+                </button>
+
+                <button type="button"
+                        id="cancelar-edicion"
+                        class="boton-admin">
+                    Cancelar
+                </button>
+
+                <p id="mensaje-admin-usuario"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTADO -->
+
+        <section class="listado-admin">
+
+            <h2>Usuarios Registrados</h2>
+
+            <div class="tabla-responsive">
+
+                <table class="tabla-admin">
+
+                    <thead>
+
+                        <tr>
+                            <th>RUN</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                            <th>Región</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tabla-usuarios">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/admin.js"></script>
+    <script src="js/admin-usuarios.js"></script>
+
+</body>
+
+</html>

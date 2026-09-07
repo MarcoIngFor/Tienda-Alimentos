@@ -1,0 +1,308 @@
+/* =========================
+   ADMINISTRACION USUARIOS
+========================= */
+
+.admin-contenido{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+
+.admin-contenido h1{
+    text-align: center;
+
+    color: darkgreen;
+}
+
+
+/* =========================
+   FORMULARIO USUARIO
+========================= */
+
+.form-admin{
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: darkslategrey;
+}
+
+
+.form-admin h2{
+    color: darkgreen;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-admin input{
+    width: 300px;
+
+    max-width: 100%;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.form-admin select{
+    width: 300px;
+
+    max-width: 100%;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+
+    background-color: white;
+}
+
+
+/* =========================
+   LISTADO USUARIOS
+========================= */
+
+.listado-admin{
+    margin-top: 40px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 10px;
+}
+
+
+.listado-admin h2{
+    text-align: center;
+
+    color: darkgreen;
+}
+
+
+/* =========================
+   TABLA RESPONSIVE
+========================= */
+
+.tabla-responsive{
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================
+   TABLA
+========================= */
+
+.tabla-admin{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    color: darkslategrey;
+}
+
+
+.tabla-admin th,
+.tabla-admin td{
+    padding: 10px;
+
+    border: 1px solid grey;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+
+.tabla-admin th{
+    background-color: darkgreen;
+
+    color: white;
+}
+
+
+.tabla-admin tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+
+/* =========================
+   BOTONES TABLA
+========================= */
+
+.ver-usuario,
+.editar-usuario,
+.eliminar-usuario{
+    margin: 2px;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* VER */
+
+.ver-usuario{
+    border: none;
+
+    background-color: darkgreen;
+
+    color: white;
+}
+
+
+.ver-usuario:hover{
+    background-color: green;
+}
+
+
+/* EDITAR */
+
+.editar-usuario{
+    border: 1px solid grey;
+
+    background-color: lightgrey;
+
+    color: black;
+}
+
+
+.editar-usuario:hover{
+    background-color: silver;
+}
+
+
+/* ELIMINAR */
+
+.eliminar-usuario{
+    border: none;
+
+    background-color: darkred;
+
+    color: white;
+}
+
+
+.eliminar-usuario:hover{
+    background-color: red;
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+#mensaje-admin-usuario{
+    margin-top: 15px;
+
+    color: darkgreen;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   BOTONES FORMULARIO
+========================= */
+
+.form-admin .boton-admin{
+    margin: 5px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: darkgreen;
+
+    color: white;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+
+.form-admin .boton-admin:hover{
+    background-color: green;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media(max-width: 900px){
+
+    .admin-contenido{
+        width: 95%;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media(max-width: 600px){
+
+    .admin-contenido{
+        width: 95%;
+    }
+
+
+    .form-admin{
+        margin: 20px 10px;
+
+        padding: 20px;
+    }
+
+
+    .form-admin input,
+    .form-admin select{
+        width: 100%;
+    }
+
+
+    .tabla-admin{
+        min-width: 750px;
+    }
+
+
+    .ver-usuario,
+    .editar-usuario,
+    .eliminar-usuario{
+        padding: 5px 8px;
+
+        font-size: 13px;
+    }
+
+}

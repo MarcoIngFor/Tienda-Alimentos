@@ -1,0 +1,74 @@
+/* =========================
+   PAGINA REGISTRO
+========================= */
+
+.formulario-registro{
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: darkslategrey;
+}
+
+
+/* Inputs y selects */
+
+.formulario-registro input,
+.formulario-registro select{
+    width: 300px;
+
+    max-width: 100%;
+
+    padding: 8px;
+
+    border: 1px solid grey;
+
+    border-radius: 5px;
+}
+
+
+/* Select */
+
+.formulario-registro select{
+    background-color: white;
+}
+
+
+/* Mensaje registro correcto */
+
+#mensaje-registro{
+    margin-top: 20px;
+
+    color: darkgreen;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 600px){
+
+    .formulario-registro{
+        margin: 20px 10px;
+
+        padding: 20px;
+    }
+
+
+    .formulario-registro input,
+    .formulario-registro select{
+        width: 100%;
+    }
+
+}

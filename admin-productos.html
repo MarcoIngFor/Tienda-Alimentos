@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrar Productos - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin-productos.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+            <div class="enlaces-nav">
+
+                <a href="admin.html">
+                    Panel Admin
+                </a>
+
+                <a href="admin-productos.html"
+                class="active">
+                    Productos
+                </a>
+
+                <a href="admin-usuarios.html">
+                    Usuarios
+                </a>
+
+            </div>
+
+            <button type="button"
+                    id="cerrar-sesion"
+                    class="cerrar-sesion">
+                Cerrar Sesión
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main class="admin-contenido">
+
+        <h1>Administración de Productos</h1>
+
+        <p id="mensaje-rol-producto"
+           class="mensaje-rol"></p>
+
+
+        <!-- =========================
+             FORMULARIO PRODUCTO
+        ========================== -->
+
+        <section class="form-admin-producto"
+                 id="seccion-form-producto">
+
+            <h2 id="titulo-form-producto">
+                Nuevo Producto
+            </h2>
+
+            <form id="form-admin-producto">
+
+                <input type="hidden"
+                       id="indice-producto">
+
+
+                <!-- CODIGO -->
+
+                <section class="formulario">
+
+                    <label for="codigo-producto">
+                        Código
+                    </label>
+
+                    <input type="text"
+                           id="codigo-producto"
+                           minlength="3">
+
+                    <p id="error-codigo-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- NOMBRE -->
+
+                <section class="formulario">
+
+                    <label for="nombre-producto">
+                        Nombre
+                    </label>
+
+                    <input type="text"
+                           id="nombre-producto"
+                           maxlength="100">
+
+                    <p id="error-nombre-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- DESCRIPCION -->
+
+                <section class="formulario">
+
+                    <label for="descripcion-producto">
+                        Descripción
+                    </label>
+
+                    <textarea id="descripcion-producto"
+                              maxlength="500"></textarea>
+
+                    <p id="error-descripcion-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- PRECIO -->
+
+                <section class="formulario">
+
+                    <label for="precio-producto">
+                        Precio
+                    </label>
+
+                    <input type="number"
+                           id="precio-producto"
+                           min="0"
+                           step="0.01">
+
+                    <p id="error-precio-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- STOCK -->
+
+                <section class="formulario">
+
+                    <label for="stock-producto">
+                        Stock
+                    </label>
+
+                    <input type="number"
+                           id="stock-producto"
+                           min="0"
+                           step="1">
+
+                    <p id="error-stock-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- STOCK CRITICO -->
+
+                <section class="formulario">
+
+                    <label for="stock-critico-producto">
+                        Stock Crítico
+                    </label>
+
+                    <input type="number"
+                           id="stock-critico-producto"
+                           min="0"
+                           step="1">
+
+                    <p id="error-stock-critico-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- CATEGORIA -->
+
+                <section class="formulario">
+
+                    <label for="categoria-producto">
+                        Categoría
+                    </label>
+
+                    <select id="categoria-producto">
+
+                        <option value="">
+                            Seleccione una categoría
+                        </option>
+
+                        <option value="abarrotes">
+                            Abarrotes
+                        </option>
+
+                        <option value="bebidas">
+                            Bebidas
+                        </option>
+
+                        <option value="snacks">
+                            Snacks
+                        </option>
+
+                        <option value="lacteos">
+                            Lácteos
+                        </option>
+
+                        <option value="bebe">
+                            Bebé
+                        </option>
+
+                        <option value="limpieza">
+                            Limpieza
+                        </option>
+
+                    </select>
+
+                    <p id="error-categoria-producto"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- IMAGEN -->
+
+                <section class="formulario">
+
+                    <label for="imagen-producto-admin">
+                        Ruta de imagen
+                    </label>
+
+                    <input type="text"
+                           id="imagen-producto-admin"
+                           placeholder="img/Productos/...">
+
+                </section>
+
+
+                <button type="submit"
+                        class="boton-admin">
+                    Guardar Producto
+                </button>
+
+                <button type="button"
+                        id="cancelar-producto"
+                        class="boton-admin">
+                    Cancelar
+                </button>
+
+                <p id="mensaje-admin-producto"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             LISTADO
+        ========================== -->
+
+        <section class="listado-admin-productos">
+
+            <h2>Productos Registrados</h2>
+
+            <p class="leyenda-stock">
+                ⚠ Los productos destacados en rojo tienen stock crítico.
+            </p>
+
+            <div class="tabla-responsive">
+
+                <table class="tabla-admin-productos">
+
+                    <thead>
+
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Stock Crítico</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tabla-productos">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                         alt="Logo La Parada del Medio"
+                         class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/admin.js"></script>
+    <script src="js/admin-productos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle Producto - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/detalle-producto.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="productos.html">
+                    Productos
+                </a>
+
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+
+                <a href="blog.html">
+                    Blog
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
+            </div>
+
+            <a href="carrito.html" class="carrito">
+                🛒 Carrito
+                (<span id="cantidad-carrito">0</span>)
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="detalle-producto">
+
+            <div class="detalle-imagen">
+
+                <img id="detalle-imagen"
+                     src=""
+                     alt="Producto">
+
+            </div>
+
+
+            <div class="detalle-info">
+
+                <h1 id="detalle-nombre">
+                    Producto
+                </h1>
+
+                <p id="detalle-descripcion">
+                </p>
+
+                <p class="detalle-precio">
+                    Precio:
+                    <strong id="detalle-precio">
+                    </strong>
+                </p>
+
+                <p>
+                    Stock disponible:
+                    <strong id="detalle-stock">
+                    </strong>
+                </p>
+
+                <p>
+                    Categoría:
+                    <strong id="detalle-categoria">
+                    </strong>
+                </p>
+
+
+                <div class="selector-cantidad">
+
+                    <button type="button"
+                            id="disminuir-detalle">
+                        −
+                    </button>
+
+                    <span id="cantidad-detalle">
+                        1
+                    </span>
+
+                    <span>
+                        un
+                    </span>
+
+                    <button type="button"
+                            id="aumentar-detalle">
+                        +
+                    </button>
+
+                </div>
+
+
+                <button type="button"
+                        id="agregar-detalle"
+                        class="agregar-carrito">
+
+                    Agregar al Carrito
+
+                </button>
+
+
+                <p id="mensaje-detalle">
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                        alt="Logo La Parada del Medio"
+                        class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/detalle-producto.js"></script>
+
+</body>
+
+</html>

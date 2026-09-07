@@ -1,0 +1,192 @@
+/* =========================
+   PANEL ADMINISTRACION
+========================= */
+
+.bienvenida-admin{
+    padding: 30px;
+
+    background-color: darkgreen;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.bienvenida-admin h1{
+    margin-top: 0;
+
+    color: white;
+}
+
+
+.bienvenida-admin p{
+    margin-bottom: 0;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTENEDOR PANEL
+========================= */
+
+.panel-admin{
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.tarjeta-admin{
+    padding: 30px;
+
+    background-color: white;
+
+    border: 1px solid lightgrey;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: darkslategrey;
+}
+
+
+.tarjeta-admin h2{
+    color: darkgreen;
+}
+
+
+.tarjeta-admin p{
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.boton-admin{
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: darkgreen;
+
+    color: white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.boton-admin:hover{
+    background-color: green;
+}
+
+
+/* =========================
+   BOTON DESHABILITADO
+========================= */
+
+.boton-deshabilitado{
+    background-color: grey;
+
+    cursor: not-allowed;
+}
+
+
+.boton-deshabilitado:hover{
+    background-color: grey;
+}
+
+
+/* =========================
+   CERRAR SESION
+========================= */
+
+.cerrar-sesion{
+    margin-left: auto;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: darkred;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.cerrar-sesion:hover{
+    background-color: red;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media(max-width: 900px){
+
+    .panel-admin{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media(max-width: 600px){
+
+    .bienvenida-admin{
+        padding: 20px 10px;
+    }
+
+
+    .panel-admin{
+        width: 95%;
+
+        margin: 25px auto;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .tarjeta-admin{
+        padding: 20px;
+    }
+
+
+    .cerrar-sesion{
+        margin-left: 0;
+    }
+
+}

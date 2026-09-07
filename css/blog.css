@@ -1,0 +1,139 @@
+/* =========================
+   BLOG
+========================= */
+
+.blog{
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 40px auto;
+}
+
+
+.blog h1{
+    text-align: center;
+
+    color: darkgreen;
+}
+
+
+.contenedor-blog{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+
+.tarjeta-blog{
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: darkslategrey;
+}
+
+
+.tarjeta-blog img{
+    width: 100%;
+
+    max-height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+.tarjeta-blog h2{
+    color: darkgreen;
+}
+
+
+.boton-blog{
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    background-color: darkgreen;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+}
+
+
+.boton-blog:hover{
+    background-color: green;
+}
+
+
+/* =========================
+   DETALLE BLOG
+========================= */
+
+.detalle-blog{
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    color: darkslategrey;
+}
+
+
+.detalle-blog img{
+    width: 100%;
+
+    max-height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+.detalle-blog h1{
+    color: darkgreen;
+}
+
+
+.detalle-blog p{
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 700px){
+
+    .contenedor-blog{
+        grid-template-columns: 1fr;
+    }
+
+
+    .detalle-blog{
+        padding: 20px;
+    }
+
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Registro - La Parada del Medio</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html">
+            <img src="img/logo/banner.png"
+                 alt="La Parada del Medio"
+                 class="banner-header">
+        </a>
+
+        <nav class="navegador">
+
+            <img src="img/logo/logo.png"
+                 alt="Logo La Parada del Medio"
+                 class="logo-nav">
+
+            <button class="menu-hamburguesa"
+                    id="menu-hamburguesa"
+                    type="button">
+                ☰
+            </button>
+
+            <div class="enlaces-nav" id="enlaces-nav">
+
+                <a href="index.html">Inicio</a>
+
+                <a href="productos.html">Productos</a>
+
+                <a href="nosotros.html">Nosotros</a>
+
+                <a href="blog.html">Blog</a>
+
+                <a href="contacto.html">Contacto</a>
+
+            </div>
+
+            <a href="carrito.html" class="carrito">
+                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+            </a>
+
+        </nav>
+
+        <section class="login">
+
+            <h1>Registro de Usuario</h1>
+
+            <p class="login-2">
+                Crea tu cuenta en La Parada del Medio
+            </p>
+
+        </section>
+
+    </header>
+
+
+    <main>
+
+        <section class="formulario-registro">
+
+            <h2>Crear cuenta</h2>
+
+            <form id="form-registro">
+
+                <!-- RUN -->
+                <section class="formulario">
+
+                    <label for="run">
+                        RUN
+                    </label>
+
+                    <input type="text"
+                           id="run"
+                           name="run"
+                           placeholder="19011022K"
+                           minlength="7"
+                           maxlength="9"
+                           autocomplete="off">
+
+                    <p id="error-run" class="error"></p>
+
+                </section>
+
+
+                <!-- Nombre -->
+                <section class="formulario">
+
+                    <label for="nombre-registro">
+                        Nombre
+                    </label>
+
+                    <input type="text"
+                           id="nombre-registro"
+                           name="nombre"
+                           maxlength="50"
+                           autocomplete="given-name">
+
+                    <p id="error-nombre-registro"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- Apellidos -->
+                <section class="formulario">
+
+                    <label for="apellido-registro">
+                        Apellidos
+                    </label>
+
+                    <input type="text"
+                           id="apellido-registro"
+                           name="apellido"
+                           maxlength="100"
+                           autocomplete="family-name">
+
+                    <p id="error-apellido-registro"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- Correo -->
+                <section class="formulario">
+
+                    <label for="correo-registro">
+                        Correo
+                    </label>
+
+                    <input type="email"
+                           id="correo-registro"
+                           name="correo"
+                           maxlength="100"
+                           autocomplete="email">
+
+                    <p id="error-correo-registro"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- Contraseña -->
+                <section class="formulario">
+
+                    <label for="password-registro">
+                        Contraseña
+                    </label>
+
+                    <input type="password"
+                           id="password-registro"
+                           name="password"
+                           minlength="4"
+                           maxlength="10"
+                           autocomplete="new-password">
+
+                    <p id="error-password-registro"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- Fecha nacimiento -->
+                <section class="formulario">
+
+                    <label for="fecha-nacimiento">
+                        Fecha de Nacimiento
+                    </label>
+
+                    <input type="date"
+                           id="fecha-nacimiento"
+                           name="fecha-nacimiento"
+                           autocomplete="bday">
+
+                </section>
+
+
+                <!-- Región -->
+                <section class="formulario">
+
+                    <label for="region">
+                        Región
+                    </label>
+
+                    <select id="region" name="region">
+
+                        <option value="">
+                            Seleccione una región
+                        </option>
+
+                        <option value="metropolitana">
+                            Región Metropolitana
+                        </option>
+
+                        <option value="valparaiso">
+                            Región de Valparaíso
+                        </option>
+
+                        <option value="ohiggins">
+                            Región de O'Higgins
+                        </option>
+
+                    </select>
+
+                    <p id="error-region" class="error"></p>
+
+                </section>
+
+
+                <!-- Comuna -->
+                <section class="formulario">
+
+                    <label for="comuna">
+                        Comuna
+                    </label>
+
+                    <select id="comuna" name="comuna">
+
+                        <option value="">
+                            Seleccione primero una región
+                        </option>
+
+                    </select>
+
+                    <p id="error-comuna" class="error"></p>
+
+                </section>
+
+
+                <!-- Dirección -->
+                <section class="formulario">
+
+                    <label for="direccion">
+                        Dirección
+                    </label>
+
+                    <input type="text"
+                           id="direccion"
+                           name="direccion"
+                           maxlength="300"
+                           autocomplete="street-address">
+
+                    <p id="error-direccion"
+                       class="error"></p>
+
+                </section>
+
+
+                <button type="submit"
+                        class="sendMessage">
+                    Registrarse
+                </button>
+
+                <p id="mensaje-registro"></p>
+
+            </form>
+
+            <p class="registro-login">
+                ¿Ya tienes una cuenta?
+                <a href="sesion.html">
+                    Iniciar Sesión
+                </a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="contenido-footer">
+
+            <section class="footer-negocio">
+
+                <a href="index.html">
+
+                    <img src="img/logo/logo.png"
+                        alt="Logo La Parada del Medio"
+                        class="logo-footer">
+
+                </a>
+
+            </section>
+
+
+            <section class="footer-horario">
+
+                <h3>Horario de Atención</h3>
+
+                <p>
+                    Lunes a Viernes de 08:00 a 22:00 hrs
+                </p>
+
+                <p>
+                    Sábados y Domingos de 09:00 a 19:00 hrs
+                </p>
+
+            </section>
+
+
+            <section class="footer-contacto">
+
+                <h3>Contacto</h3>
+
+                <p>
+                    Teléfono: +56 9 12345678
+                </p>
+
+                <p>
+                    Correo: contacto@laparadadelmedio.cl
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 La Parada del Medio
+        </p>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/registro.js"></script>
+
+</body>
+
+</html>

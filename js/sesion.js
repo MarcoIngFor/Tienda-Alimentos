@@ -1,69 +1,264 @@
-const correoLogin = document.querySelector("#correo-login");
-const passwordLogin = document.querySelector("#password-login");
-const botonLogin = document.querySelector("#btn-login");
+const formularioLogin =
+    document.querySelector("#form-login");
 
-const errorCorreo = document.querySelector("#error-correo-login");
-const errorPassword = document.querySelector("#error-password-login");
-const mensajeLogin = document.querySelector("#mensaje-login");
+const correoLogin =
+    document.querySelector("#correo-login");
+
+const passwordLogin =
+    document.querySelector("#password-login");
+
+const errorCorreoLogin =
+    document.querySelector("#error-correo-login");
+
+const errorPasswordLogin =
+    document.querySelector("#error-password-login");
+
+const mensajeLogin =
+    document.querySelector("#mensaje-login");
 
 
-botonLogin.addEventListener("click", function() {
 
-    errorCorreo.textContent = "";
-    errorPassword.textContent = "";
-    mensajeLogin.textContent = "";
+// =========================
+// VALIDAR CORREO
+// =========================
 
-    const correo = correoLogin.value.trim().toLowerCase();
-    const password = passwordLogin.value.trim();
+function correoPermitidoLogin(correo) {
+
+    const correoLimpio =
+        correo
+            .trim()
+            .toLowerCase();
 
 
-    // Validación de campos vacíos
-    if (correo === "") {
-        errorCorreo.textContent = "Debe ingresar un correo electrónico";
-        return;
+    return (
+        correoLimpio.endsWith("@duoc.cl") ||
+        correoLimpio.endsWith("@profesor.duoc.cl") ||
+        correoLimpio.endsWith("@gmail.com")
+    );
+
+}
+
+
+
+// =========================
+// LIMPIAR MENSAJES
+// =========================
+
+function limpiarMensajesLogin() {
+
+    errorCorreoLogin.textContent =
+        "";
+
+    errorPasswordLogin.textContent =
+        "";
+
+    mensajeLogin.textContent =
+        "";
+
+}
+
+
+
+// =========================
+// INICIAR SESION
+// =========================
+
+formularioLogin.addEventListener(
+    "submit",
+    function(evento) {
+
+        evento.preventDefault();
+
+
+        limpiarMensajesLogin();
+
+
+        let formularioValido =
+            true;
+
+
+        const correo =
+            correoLogin
+                .value
+                .trim()
+                .toLowerCase();
+
+
+        const password =
+            passwordLogin.value;
+
+
+
+        // =========================
+        // CORREO
+        // =========================
+
+        if (correo === "") {
+
+            errorCorreoLogin.textContent =
+                "Debe ingresar un correo electrónico";
+
+            formularioValido =
+                false;
+
+        } else if (
+            correo.length > 100
+        ) {
+
+            errorCorreoLogin.textContent =
+                "El correo no puede superar los 100 caracteres";
+
+            formularioValido =
+                false;
+
+        } else if (
+            !correoPermitidoLogin(correo)
+        ) {
+
+            errorCorreoLogin.textContent =
+                "Ingrese un correo @duoc.cl, @profesor.duoc.cl o @gmail.com";
+
+            formularioValido =
+                false;
+
+        }
+
+
+
+        // =========================
+        // CONTRASEÑA
+        // =========================
+
+        if (password === "") {
+
+            errorPasswordLogin.textContent =
+                "Debe ingresar una contraseña";
+
+            formularioValido =
+                false;
+
+        } else if (
+            password.length < 4 ||
+            password.length > 10
+        ) {
+
+            errorPasswordLogin.textContent =
+                "La contraseña debe tener entre 4 y 10 caracteres";
+
+            formularioValido =
+                false;
+
+        }
+
+
+
+        if (!formularioValido) {
+
+            return;
+
+        }
+
+
+
+        // =========================
+        // USUARIOS REGISTRADOS
+        // =========================
+
+        const usuarios =
+            JSON.parse(
+                localStorage.getItem("usuarios")
+            ) || [];
+
+
+        const usuarioEncontrado =
+            usuarios.find(
+                function(usuario) {
+
+                    return (
+                        usuario.correo
+                            .toLowerCase() === correo &&
+
+                        usuario.password ===
+                        password
+                    );
+
+                }
+            );
+
+
+
+        // =========================
+        // USUARIO ENCONTRADO
+        // =========================
+
+        if (usuarioEncontrado) {
+
+            localStorage.setItem(
+                "usuarioActivo",
+                usuarioEncontrado.tipoUsuario
+            );
+
+
+            localStorage.setItem(
+                "usuarioSesion",
+                JSON.stringify(
+                    usuarioEncontrado
+                )
+            );
+
+
+            mensajeLogin.textContent =
+                "Inicio de sesión correcto";
+
+
+            // ADMINISTRADOR
+
+            if (
+                usuarioEncontrado.tipoUsuario ===
+                "admin"
+            ) {
+
+                window.location.href =
+                    "admin.html";
+
+            }
+
+
+            // VENDEDOR
+
+            else if (
+                usuarioEncontrado.tipoUsuario ===
+                "vendedor"
+            ) {
+
+                window.location.href =
+                    "admin.html";
+
+            }
+
+
+            // CLIENTE
+
+            else {
+
+                window.location.href =
+                    "index.html";
+
+            }
+
+
+            return;
+
+        }
+
+
+
+        // =========================
+        // CREDENCIALES INCORRECTAS
+        // =========================
+
+        mensajeLogin.textContent =
+            "Correo o contraseña incorrectos";
+
     }
-
-    if (password === "") {
-        errorPassword.textContent = "Debe ingresar una contraseña";
-        return;
-    }
-
-
-    // Usuario administrador
-    if (
-        correo === "admin@laparadadelmedio.cl" &&
-        password === "admin123"
-    ) {
-
-        localStorage.setItem("usuarioActivo", "admin");
-
-        mensajeLogin.textContent = "Inicio de sesión como administrador";
-
-        window.location.href = "admin.html";
-
-    }
-
-
-    // Usuario normal
-    else if (
-        correo === "usuario@gmail.com" &&
-        password === "usuario123"
-    ) {
-
-        localStorage.setItem("usuarioActivo", "usuario");
-
-        mensajeLogin.textContent = "Inicio de sesión correcto";
-
-        window.location.href = "index.html";
-
-    }
-
-
-    // Datos incorrectos
-    else {
-
-        mensajeLogin.textContent = "Correo o contraseña incorrectos";
-
-    }
-
-});
+);

@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
 
     <title>Iniciar Sesión - La Parada del Medio</title>
 
@@ -15,15 +14,15 @@
 
     <header>
 
-        <!-- Banner principal -->
         <a href="index.html">
+
             <img src="img/logo/banner.png"
                  alt="La Parada del Medio"
                  class="banner-header">
+
         </a>
 
 
-        <!-- Barra de navegación -->
         <nav class="navegador">
 
             <img src="img/logo/logo.png"
@@ -31,7 +30,6 @@
                  class="logo-nav">
 
 
-            <!-- Botón menú hamburguesa para celular -->
             <button class="menu-hamburguesa"
                     id="menu-hamburguesa"
                     type="button">
@@ -39,8 +37,8 @@
             </button>
 
 
-            <!-- Enlaces principales -->
-            <div class="enlaces-nav" id="enlaces-nav">
+            <div class="enlaces-nav"
+                 id="enlaces-nav">
 
                 <a href="index.html">
                     Inicio
@@ -54,24 +52,33 @@
                     Nosotros
                 </a>
 
+                <a href="blog.html">
+                    Blog
+                </a>
+
                 <a href="contacto.html">
                     Contacto
                 </a>
 
             </div>
 
-            <!-- Indicador del carrito -->
-            <a href="carrito.html" class="carrito">
-                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+
+            <a href="carrito.html"
+               class="carrito">
+
+                🛒 Carrito
+                (<span id="cantidad-carrito">0</span>)
+
             </a>
 
         </nav>
 
 
-        <!-- Encabezado de la página -->
         <section class="login">
 
-            <h1>Iniciar Sesión</h1>
+            <h1>
+                Iniciar Sesión
+            </h1>
 
             <p class="login-2">
                 Bienvenido a La Parada del Medio
@@ -82,79 +89,91 @@
     </header>
 
 
-
     <main>
 
         <section class="formulario-login">
 
-            <h2>Acceso de Usuario</h2>
+            <h2>
+                Acceso de Usuario
+            </h2>
 
 
-            <!-- Correo electrónico -->
-            <section class="formulario">
+            <form id="form-login">
 
-                <label for="correo-login">
-                    👤 Correo Electrónico
-                </label>
 
-                <input type="email"
-                       id="correo-login"
-                       name="correo-login"
-                       placeholder="correo@ejemplo.com"
-                       autocomplete="email">
+                <!-- CORREO -->
 
-                <p id="error-correo-login"
-                   class="error">
+                <section class="formulario">
+
+                    <label for="correo-login">
+                        👤 Correo Electrónico
+                    </label>
+
+                    <input type="email"
+                           id="correo-login"
+                           name="correo-login"
+                           maxlength="100"
+                           placeholder="correo@gmail.com"
+                           autocomplete="email">
+
+                    <p id="error-correo-login"
+                       class="error"></p>
+
+                </section>
+
+
+                <!-- CONTRASEÑA -->
+
+                <section class="formulario">
+
+                    <label for="password-login">
+                        🔒 Contraseña
+                    </label>
+
+                    <input type="password"
+                           id="password-login"
+                           name="password-login"
+                           minlength="4"
+                           maxlength="10"
+                           placeholder="Ingrese su contraseña"
+                           autocomplete="current-password">
+
+                    <p id="error-password-login"
+                       class="error"></p>
+
+                </section>
+
+
+                <button type="submit"
+                        class="sendMessage">
+                    Iniciar Sesión
+                </button>
+
+
+                <p id="mensaje-login"></p>
+
+
+                <p class="registro-login">
+
+                    ¿No tienes una cuenta?
+
+                    <a href="registro.html">
+                        Crear cuenta
+                    </a>
+
                 </p>
 
-            </section>
-
-
-            <!-- Contraseña -->
-            <section class="formulario">
-
-                <label for="password-login">
-                    🔒 Contraseña
-                </label>
-
-                <input type="password"
-                       id="password-login"
-                       name="password-login"
-                       placeholder="Ingrese su contraseña"
-                       autocomplete="current-password">
-
-                <p id="error-password-login"
-                   class="error">
-                </p>
-
-            </section>
-
-
-            <!-- Botón iniciar sesión -->
-            <button type="button"
-                    class="sendMessage"
-                    id="btn-login">
-                Iniciar Sesión
-            </button>
-
-            <p id="mensaje-login"></p>
-
-            <p class="registro-login">
-                ¿No tienes una cuenta?
-                <a href="registro.html">
-                    Crear cuenta
-                </a>
-            </p>
+            </form>
 
         </section>
 
     </main>
 
 
-
     <footer>
 
         <div class="contenido-footer">
+
 
             <section class="footer-negocio">
 
@@ -171,7 +190,9 @@
 
             <section class="footer-horario">
 
-                <h3>Horario de Atención</h3>
+                <h3>
+                    Horario de Atención
+                </h3>
 
                 <p>
                     Lunes a Viernes de 08:00 a 22:00 hrs
@@ -186,7 +207,9 @@
 
             <section class="footer-contacto">
 
-                <h3>Contacto</h3>
+                <h3>
+                    Contacto
+                </h3>
 
                 <p>
                     Teléfono: +56 9 12345678
