@@ -1,97 +1,68 @@
-const rolUsuarioAdmin =
-    localStorage.getItem("usuarioActivo");
+const rolUsuarioAdmin = localStorage.getItem("usuarioActivo");
 
 
 if (rolUsuarioAdmin !== "admin") {
 
-    alert(
-        "Acceso permitido solo para administradores"
-    );
+    alert("Acceso permitido solo para administradores");
 
-    window.location.href =
-        "admin.html";
+    window.location.href = "admin.html";
 }
-const formularioUsuario =
-    document.querySelector("#form-admin-usuario");
 
-const tablaUsuarios =
-    document.querySelector("#tabla-usuarios");
+const formularioUsuario = document.querySelector("#form-admin-usuario");
 
-const indiceUsuario =
-    document.querySelector("#indice-usuario");
+const tablaUsuarios = document.querySelector("#tabla-usuarios");
 
-const runUsuario =
-    document.querySelector("#admin-run");
+const indiceUsuario = document.querySelector("#indice-usuario");
 
-const nombreUsuario =
-    document.querySelector("#admin-nombre");
+const runUsuario = document.querySelector("#admin-run");
 
-const apellidoUsuario =
-    document.querySelector("#admin-apellido");
+const nombreUsuario = document.querySelector("#admin-nombre");
 
-const correoUsuario =
-    document.querySelector("#admin-correo");
+const apellidoUsuario = document.querySelector("#admin-apellido");
 
-const passwordUsuario =
-    document.querySelector("#admin-password");
+const correoUsuario = document.querySelector("#admin-correo");
 
-const fechaUsuario =
-    document.querySelector("#admin-fecha");
+const passwordUsuario = document.querySelector("#admin-password");
 
-const tipoUsuario =
-    document.querySelector("#admin-tipo");
+const fechaUsuario = document.querySelector("#admin-fecha");
 
-const regionUsuario =
-    document.querySelector("#admin-region");
+const tipoUsuario = document.querySelector("#admin-tipo");
 
-const comunaUsuario =
-    document.querySelector("#admin-comuna");
+const regionUsuario = document.querySelector("#admin-region");
 
-const direccionUsuario =
-    document.querySelector("#admin-direccion");
+const comunaUsuario = document.querySelector("#admin-comuna");
 
-const mensajeUsuario =
-    document.querySelector("#mensaje-admin-usuario");
+const direccionUsuario = document.querySelector("#admin-direccion");
 
-const tituloFormulario =
-    document.querySelector("#titulo-form-usuario");
+const mensajeUsuario = document.querySelector("#mensaje-admin-usuario");
 
-const botonCancelar =
-    document.querySelector("#cancelar-edicion");
+const tituloFormulario = document.querySelector("#titulo-form-usuario");
+
+const botonCancelar = document.querySelector("#cancelar-edicion");
 
 
 // ERRORES
 
-const errorRun =
-    document.querySelector("#error-admin-run");
+const errorRun = document.querySelector("#error-admin-run");
 
-const errorNombre =
-    document.querySelector("#error-admin-nombre");
+const errorNombre = document.querySelector("#error-admin-nombre");
 
-const errorApellido =
-    document.querySelector("#error-admin-apellido");
+const errorApellido = document.querySelector("#error-admin-apellido");
 
-const errorCorreo =
-    document.querySelector("#error-admin-correo");
+const errorCorreo = document.querySelector("#error-admin-correo");
 
-const errorPassword =
-    document.querySelector("#error-admin-password");
+const errorPassword = document.querySelector("#error-admin-password");
 
-const errorTipo =
-    document.querySelector("#error-admin-tipo");
+const errorTipo = document.querySelector("#error-admin-tipo");
 
-const errorRegion =
-    document.querySelector("#error-admin-region");
+const errorRegion = document.querySelector("#error-admin-region");
 
-const errorComuna =
-    document.querySelector("#error-admin-comuna");
+const errorComuna = document.querySelector("#error-admin-comuna");
 
-const errorDireccion =
-    document.querySelector("#error-admin-direccion");
+const errorDireccion = document.querySelector("#error-admin-direccion");
 
 
-let usuariosAdmin =
-    JSON.parse(localStorage.getItem("usuarios")) || [];
+let usuariosAdmin = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 
 
@@ -237,18 +208,15 @@ function cargarRegionesAdmin() {
         '<option value="">Seleccione una región</option>';
 
 
-    Object.keys(regionesAdmin).forEach(function(clave) {
+        Object.keys(regionesAdmin).forEach(function(clave) {
 
-        const opcion =
-            document.createElement("option");
+            const opcion = document.createElement("option");
 
-        opcion.value =
-            clave;
+            opcion.value = clave;
 
-        opcion.textContent =
-            nombresRegiones[clave];
+            opcion.textContent = nombresRegiones[clave];
 
-        regionUsuario.appendChild(opcion);
+            regionUsuario.appendChild(opcion);
 
     });
 
@@ -268,28 +236,19 @@ function cargarComunasAdmin(regionSeleccionada) {
     comunaUsuario.innerHTML =
         '<option value="">Seleccione una comuna</option>';
 
-
-    if (
-        regionSeleccionada === "" ||
-        !regionesAdmin[regionSeleccionada]
-    ) {
+    if (regionSeleccionada === "" || !regionesAdmin[regionSeleccionada]) {
 
         return;
 
     }
 
+    regionesAdmin[regionSeleccionada].forEach(function(nombreComuna) {
 
-    regionesAdmin[regionSeleccionada]
-        .forEach(function(nombreComuna) {
+            const opcion = document.createElement("option");
 
-            const opcion =
-                document.createElement("option");
+            opcion.value = nombreComuna;
 
-            opcion.value =
-                nombreComuna;
-
-            opcion.textContent =
-                nombreComuna;
+            opcion.textContent = nombreComuna;
 
             comunaUsuario.appendChild(opcion);
 
@@ -299,13 +258,9 @@ function cargarComunasAdmin(regionSeleccionada) {
 
 
 
-regionUsuario.addEventListener(
-    "change",
-    function() {
+regionUsuario.addEventListener("change",function() {
 
-        cargarComunasAdmin(
-            regionUsuario.value
-        );
+        cargarComunasAdmin(regionUsuario.value);
 
     }
 );
@@ -318,47 +273,29 @@ regionUsuario.addEventListener(
 
 function validarRunAdmin(runIngresado) {
 
-    const runLimpio =
-        runIngresado
-            .toUpperCase()
-            .replace(/\./g, "")
-            .replace(/-/g, "");
+    const runLimpio = runIngresado.toUpperCase().replace(/\./g, "").replace(/-/g, "");
 
 
-    if (
-        !/^\d{6,8}[0-9K]$/.test(runLimpio)
-    ) {
+    if (!/^\d{6,8}[0-9K]$/.test(runLimpio)) {
 
         return false;
 
     }
 
 
-    const cuerpo =
-        runLimpio.slice(0, -1);
+    const cuerpo = runLimpio.slice(0, -1);
 
-    const digitoIngresado =
-        runLimpio.slice(-1);
-
+    const digitoIngresado = runLimpio.slice(-1);
 
     let suma = 0;
 
     let multiplicador = 2;
 
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
 
-    for (
-        let i = cuerpo.length - 1;
-        i >= 0;
-        i--
-    ) {
-
-        suma +=
-            Number(cuerpo[i]) *
-            multiplicador;
-
+        suma += Number(cuerpo[i]) * multiplicador;
 
         multiplicador++;
-
 
         if (multiplicador === 8) {
 
@@ -369,8 +306,7 @@ function validarRunAdmin(runIngresado) {
     }
 
 
-    const resultado =
-        11 - (suma % 11);
+    const resultado = 11 - (suma % 11);
 
 
     let digitoCorrecto;
@@ -386,15 +322,13 @@ function validarRunAdmin(runIngresado) {
 
     } else {
 
-        digitoCorrecto =
-            String(resultado);
+        digitoCorrecto = String(resultado);
 
     }
 
 
     return (
-        digitoIngresado ===
-        digitoCorrecto
+        digitoIngresado === digitoCorrecto
     );
 
 }

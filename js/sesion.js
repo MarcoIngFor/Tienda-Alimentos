@@ -4,11 +4,7 @@
 
 function inicializarUsuariosDemo() {
 
-    let usuarios =
-        JSON.parse(
-            localStorage.getItem("usuarios")
-        ) || [];
-
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     const usuariosDemo = [
 
@@ -54,27 +50,19 @@ function inicializarUsuariosDemo() {
     ];
 
 
-    usuariosDemo.forEach(
-        function(usuarioDemo) {
+    usuariosDemo.forEach(function(usuarioDemo) {
 
-            const existe =
-                usuarios.some(
-                    function(usuario) {
+            const existe = usuarios.some(function(usuario) {
 
-                        return (
-                            usuario.correo ===
-                            usuarioDemo.correo
-                        );
+                    return (usuario.correo === usuarioDemo.correo);
 
-                    }
-                );
+                }
+            );
 
 
             if (!existe) {
 
-                usuarios.push(
-                    usuarioDemo
-                );
+                usuarios.push(usuarioDemo);
 
             }
 
@@ -82,33 +70,24 @@ function inicializarUsuariosDemo() {
     );
 
 
-    localStorage.setItem(
-        "usuarios",
-        JSON.stringify(usuarios)
-    );
+    localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 }
 
 
 inicializarUsuariosDemo();
 
-const formularioLogin =
-    document.querySelector("#form-login");
+const formularioLogin = document.querySelector("#form-login");
 
-const correoLogin =
-    document.querySelector("#correo-login");
+const correoLogin = document.querySelector("#correo-login");
 
-const passwordLogin =
-    document.querySelector("#password-login");
+const passwordLogin = document.querySelector("#password-login");
 
-const errorCorreoLogin =
-    document.querySelector("#error-correo-login");
+const errorCorreoLogin = document.querySelector("#error-correo-login");
 
-const errorPasswordLogin =
-    document.querySelector("#error-password-login");
+const errorPasswordLogin = document.querySelector("#error-password-login");
 
-const mensajeLogin =
-    document.querySelector("#mensaje-login");
+const mensajeLogin = document.querySelector("#mensaje-login");
 
 
 
@@ -118,10 +97,7 @@ const mensajeLogin =
 
 function correoPermitidoLogin(correo) {
 
-    const correoLimpio =
-        correo
-            .trim()
-            .toLowerCase();
+    const correoLimpio = correo.trim().toLowerCase();
 
 
     return (
@@ -140,14 +116,11 @@ function correoPermitidoLogin(correo) {
 
 function limpiarMensajesLogin() {
 
-    errorCorreoLogin.textContent =
-        "";
+    errorCorreoLogin.textContent ="";
 
-    errorPasswordLogin.textContent =
-        "";
+    errorPasswordLogin.textContent ="";
 
-    mensajeLogin.textContent =
-        "";
+    mensajeLogin.textContent ="";
 
 }
 
@@ -157,31 +130,20 @@ function limpiarMensajesLogin() {
 // INICIAR SESION
 // =========================
 
-formularioLogin.addEventListener(
-    "submit",
-    function(evento) {
+formularioLogin.addEventListener("submit",function(evento) {
 
-        evento.preventDefault();
-
+        evento.preventDefault(); /*Detiene que la pagina se recargue para poder revisarla*/
 
         limpiarMensajesLogin();
 
 
-        let formularioValido =
-            true;
+        let formularioValido = true;
 
 
-        const correo =
-            correoLogin
-                .value
-                .trim()
-                .toLowerCase();
+        const correo = correoLogin.value.trim().toLowerCase();
 
 
-        const password =
-            passwordLogin.value;
-
-
+        const password = passwordLogin.value;
 
         // =========================
         // CORREO
@@ -189,31 +151,21 @@ formularioLogin.addEventListener(
 
         if (correo === "") {
 
-            errorCorreoLogin.textContent =
-                "Debe ingresar un correo electrónico";
+            errorCorreoLogin.textContent = "Debe ingresar un correo electrónico";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            correo.length > 100
-        ) {
+        } else if (correo.length > 100) {
 
-            errorCorreoLogin.textContent =
-                "El correo no puede superar los 100 caracteres";
+            errorCorreoLogin.textContent = "El correo no puede superar los 100 caracteres";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            !correoPermitidoLogin(correo)
-        ) {
+        } else if (!correoPermitidoLogin(correo)) {
 
-            errorCorreoLogin.textContent =
-                "Ingrese un correo @duoc.cl, @profesor.duoc.cl o @gmail.com";
+            errorCorreoLogin.textContent = "Ingrese un correo @duoc.cl, @profesor.duoc.cl o @gmail.com";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
 
@@ -225,26 +177,18 @@ formularioLogin.addEventListener(
 
         if (password === "") {
 
-            errorPasswordLogin.textContent =
-                "Debe ingresar una contraseña";
+            errorPasswordLogin.textContent = "Debe ingresar una contraseña";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            password.length < 4 ||
-            password.length > 10
+        } else if (password.length < 4 || password.length > 10
         ) {
 
-            errorPasswordLogin.textContent =
-                "La contraseña debe tener entre 4 y 10 caracteres";
+            errorPasswordLogin.textContent = "La contraseña debe tener entre 4 y 10 caracteres";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
-
-
 
         if (!formularioValido) {
 
@@ -258,23 +202,12 @@ formularioLogin.addEventListener(
         // USUARIOS REGISTRADOS
         // =========================
 
-        const usuarios =
-            JSON.parse(
-                localStorage.getItem("usuarios")
-            ) || [];
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 
-        const usuarioEncontrado =
-            usuarios.find(
-                function(usuario) {
+        const usuarioEncontrado = usuarios.find(function(usuario) {
 
-                    return (
-                        usuario.correo
-                            .toLowerCase() === correo &&
-
-                        usuario.password ===
-                        password
-                    );
+                    return (usuario.correo.toLowerCase() === correo && usuario.password === password);
 
                 }
             );
@@ -287,46 +220,29 @@ formularioLogin.addEventListener(
 
         if (usuarioEncontrado) {
 
-            localStorage.setItem(
-                "usuarioActivo",
-                usuarioEncontrado.tipoUsuario
-            );
+            localStorage.setItem("usuarioActivo",usuarioEncontrado.tipoUsuario);
 
 
-            localStorage.setItem(
-                "usuarioSesion",
-                JSON.stringify(
-                    usuarioEncontrado
-                )
-            );
+            localStorage.setItem("usuarioSesion", JSON.stringify(usuarioEncontrado));
 
 
-            mensajeLogin.textContent =
-                "Inicio de sesión correcto";
+            mensajeLogin.textContent = "Inicio de sesión correcto";
 
 
             // ADMINISTRADOR
 
-            if (
-                usuarioEncontrado.tipoUsuario ===
-                "admin"
-            ) {
+            if (usuarioEncontrado.tipoUsuario === "admin") {
 
-                window.location.href =
-                    "admin.html";
+                window.location.href ="admin.html";
 
             }
 
 
             // VENDEDOR
 
-            else if (
-                usuarioEncontrado.tipoUsuario ===
-                "vendedor"
-            ) {
+            else if (usuarioEncontrado.tipoUsuario === "vendedor") {
 
-                window.location.href =
-                    "admin.html";
+                window.location.href = "admin.html";
 
             }
 
@@ -335,11 +251,9 @@ formularioLogin.addEventListener(
 
             else {
 
-                window.location.href =
-                    "index.html";
+                window.location.href ="index.html";
 
             }
-
 
             return;
 
@@ -351,8 +265,6 @@ formularioLogin.addEventListener(
         // CREDENCIALES INCORRECTAS
         // =========================
 
-        mensajeLogin.textContent =
-            "Correo o contraseña incorrectos";
-
+        mensajeLogin.textContent ="Correo o contraseña incorrectos";
     }
 );

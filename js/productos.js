@@ -2,11 +2,9 @@
 // CARRITO
 // =========================
 
-let carritoProductos =
-    JSON.parse(localStorage.getItem("carrito")) || [];
+let carritoProductos = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const contadorCarrito =
-    document.querySelector("#cantidad-carrito");
+const contadorCarrito = document.querySelector("#cantidad-carrito");
 
 
 
@@ -19,20 +17,15 @@ function obtenerProductosIniciales() {
 
     const productosIniciales = [];
 
-    const tarjetas =
-        document.querySelectorAll(".producto");
-
+    const tarjetas = document.querySelectorAll(".producto");
 
     tarjetas.forEach(function(tarjeta, indice) {
 
-        const boton =
-            tarjeta.querySelector(".agregar-carrito");
+        const boton = tarjeta.querySelector(".agregar-carrito");
 
-        const imagen =
-            tarjeta.querySelector(".imagen-producto");
+        const imagen = tarjeta.querySelector(".imagen-producto");
 
-        const seccion =
-            tarjeta.closest(".seccion-productos");
+        const seccion = tarjeta.closest(".seccion-productos");
 
 
         if (!boton || !imagen || !seccion) {
@@ -42,38 +35,27 @@ function obtenerProductosIniciales() {
 
         const producto = {
 
-            codigo:
-                "WEB" +
-                String(indice + 1).padStart(3, "0"),
+            codigo: "WEB" + String(indice + 1).padStart(3, "0"),
 
-            nombre:
-                boton.dataset.nombre,
+            nombre: boton.dataset.nombre,
 
-            descripcion:
-                "",
+            descripcion: "",
 
-            precio:
-                Number(boton.dataset.precio),
+            precio: Number(boton.dataset.precio),
 
-            stock:
-                20,
+            stock: 20,
 
-            stockCritico:
-                5,
+            stockCritico: 5,
 
-            categoria:
-                seccion.id,
+            categoria: seccion.id,
 
-            imagen:
-                imagen.getAttribute("src")
+            imagen: imagen.getAttribute("src")
 
         };
-
 
         productosIniciales.push(producto);
 
     });
-
 
     return productosIniciales;
 
@@ -87,65 +69,45 @@ function obtenerProductosIniciales() {
 
 function inicializarCatalogo() {
 
-    const yaInicializado =
-        localStorage.getItem("catalogoInicializado");
+    const yaInicializado = localStorage.getItem("catalogoInicializado");
 
 
     if (yaInicializado === "true") {
         return;
     }
 
+    const productosHTML = obtenerProductosIniciales();
 
-    const productosHTML =
-        obtenerProductosIniciales();
-
-
-    const productosGuardados =
-        JSON.parse(
-            localStorage.getItem("productos")
-        ) || [];
+    const productosGuardados = JSON.parse(localStorage.getItem("productos")) || [];
 
 
     // Partimos con todos los productos existentes
-    const productosCombinados =
-        [...productosHTML];
+    const productosCombinados = [...productosHTML];
 
 
     // Agregar productos creados desde administrador
     productosGuardados.forEach(function(productoAdmin) {
 
-        const existe =
-            productosCombinados.some(function(producto) {
+        const existe = productosCombinados.some(function(producto) {
 
-                return (
-                    producto.codigo === productoAdmin.codigo ||
-                    producto.nombre === productoAdmin.nombre
-                );
+                return (producto.codigo === productoAdmin.codigo || producto.nombre === productoAdmin.nombre);
 
             });
 
 
         if (!existe) {
 
-            productosCombinados.push(
-                productoAdmin
-            );
+            productosCombinados.push(productoAdmin);
 
         }
 
     });
 
 
-    localStorage.setItem(
-        "productos",
-        JSON.stringify(productosCombinados)
-    );
+    localStorage.setItem("productos",JSON.stringify(productosCombinados));
 
 
-    localStorage.setItem(
-        "catalogoInicializado",
-        "true"
-    );
+    localStorage.setItem("catalogoInicializado","true");
 
 }
 
@@ -159,8 +121,7 @@ inicializarCatalogo();
 // OBTENER ARREGLO
 // =========================
 
-let productos =
-    JSON.parse(localStorage.getItem("productos")) || [];
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 
 
@@ -171,11 +132,7 @@ let productos =
 
 function mostrarProductos() {
 
-    const contenedores =
-        document.querySelectorAll(
-            ".contenedor-productos"
-        );
-
+    const contenedores = document.querySelectorAll(".contenedor-productos");
 
     // Vaciar productos escritos originalmente en HTML
     contenedores.forEach(function(contenedor) {
@@ -187,10 +144,7 @@ function mostrarProductos() {
 
     productos.forEach(function(producto) {
 
-        const seccion =
-            document.querySelector(
-                "#" + producto.categoria
-            );
+        const seccion = document.querySelector("#" + producto.categoria); /*del arreglo producto rescata el id*/
 
 
         if (!seccion) {
@@ -198,14 +152,10 @@ function mostrarProductos() {
         }
 
 
-        const contenedor =
-            seccion.querySelector(
-                ".contenedor-productos"
-            );
+        const contenedor =seccion.querySelector(".contenedor-productos");
 
 
-        const tarjeta =
-            document.createElement("article");
+        const tarjeta = document.createElement("article");
 
 
         tarjeta.classList.add("producto");
@@ -216,11 +166,9 @@ function mostrarProductos() {
             <a href="detalle-producto.html?codigo=${producto.codigo}"
                 class="link-detalle-producto">
 
-                <img
-                    src="${producto.imagen}"
-                    alt="${producto.nombre}"
-                    class="imagen-producto"
-                >
+                <img src="${producto.imagen}"
+                alt="${producto.nombre}"
+                class="imagen-producto">
 
                 <h3>
                     ${producto.nombre}
@@ -298,34 +246,19 @@ function activarControlesProductos() {
 
     // AUMENTAR
 
-    document
-        .querySelectorAll(".aumentar")
-        .forEach(function(boton) {
+    document.querySelectorAll(".aumentar").forEach(function(boton) {
 
-            boton.addEventListener(
-                "click",
-                function() {
+            boton.addEventListener("click",function() {
 
-                    const producto =
-                        boton.closest(".producto");
+                    const producto = boton.closest(".producto");
 
-                    const cantidad =
-                        producto.querySelector(
-                            ".cantidad"
-                        );
+                    const cantidad = producto.querySelector(".cantidad");
 
-
-                    let numero =
-                        Number(
-                            cantidad.textContent
-                        );
-
+                    let numero =Number(cantidad.textContent);
 
                     numero++;
 
-
-                    cantidad.textContent =
-                        numero;
+                    cantidad.textContent = numero;
 
                 }
             );
@@ -336,28 +269,15 @@ function activarControlesProductos() {
 
     // DISMINUIR
 
-    document
-        .querySelectorAll(".disminuir")
-        .forEach(function(boton) {
+    document.querySelectorAll(".disminuir").forEach(function(boton) {
 
-            boton.addEventListener(
-                "click",
-                function() {
+            boton.addEventListener("click",function() {
 
-                    const producto =
-                        boton.closest(".producto");
+                    const producto = boton.closest(".producto");
 
-                    const cantidad =
-                        producto.querySelector(
-                            ".cantidad"
-                        );
+                    const cantidad = producto.querySelector(".cantidad");
 
-
-                    let numero =
-                        Number(
-                            cantidad.textContent
-                        );
-
+                    let numero = Number(cantidad.textContent);
 
                     if (numero > 1) {
 
@@ -365,9 +285,7 @@ function activarControlesProductos() {
 
                     }
 
-
-                    cantidad.textContent =
-                        numero;
+                    cantidad.textContent = numero;
 
                 }
             );
@@ -380,64 +298,41 @@ function activarControlesProductos() {
     // AGREGAR AL CARRITO
     // =========================
 
-    document
-        .querySelectorAll(".agregar-carrito")
-        .forEach(function(boton) {
+    document.querySelectorAll(".agregar-carrito").forEach(function(boton) {
 
-            boton.addEventListener(
-                "click",
-                function() {
+            boton.addEventListener("click",function() {
 
-                    const tarjeta =
-                        boton.closest(".producto");
+                    const tarjeta = boton.closest(".producto");
 
 
-                    const nombre =
-                        boton.dataset.nombre;
+                    const nombre = boton.dataset.nombre;
 
 
-                    const precio =
-                        Number(
-                            boton.dataset.precio
-                        );
+                    const precio = Number(boton.dataset.precio);
 
 
-                    const cantidadElemento =
-                        tarjeta.querySelector(
-                            ".cantidad"
-                        );
+                    const cantidadElemento = tarjeta.querySelector(".cantidad");
 
 
-                    const cantidad =
-                        Number(
-                            cantidadElemento.textContent
-                        );
+                    const cantidad =Number(cantidadElemento.textContent);
 
 
-                    const imagen =
-                        tarjeta
-                            .querySelector(
-                                ".imagen-producto"
-                            )
-                            .src;
+                    const imagen = tarjeta.querySelector(".imagen-producto").src;
 
 
-                    const existente =
-                        carritoProductos.find(
-                            function(item) {
+                    const existente = carritoProductos.find(function(item) {
 
-                                return (
-                                    item.nombre === nombre
-                                );
+                            return (
+                                item.nombre === nombre
+                            );
 
-                            }
-                        );
+                        }
+                    );
 
 
                     if (existente) {
 
-                        existente.cantidad +=
-                            cantidad;
+                        existente.cantidad += cantidad;
 
                     } else {
 
@@ -456,19 +351,13 @@ function activarControlesProductos() {
                     }
 
 
-                    localStorage.setItem(
-                        "carrito",
-                        JSON.stringify(
-                            carritoProductos
-                        )
-                    );
+                    localStorage.setItem("carrito",JSON.stringify(carritoProductos));
 
 
                     actualizarContadorCarritoProductos();
 
 
-                    cantidadElemento.textContent =
-                        1;
+                    cantidadElemento.textContent = 1;
 
                 }
             );
@@ -500,8 +389,7 @@ function actualizarContadorCarritoProductos() {
     });
 
 
-    contadorCarrito.textContent =
-        total;
+    contadorCarrito.textContent = total;
 
 }
 

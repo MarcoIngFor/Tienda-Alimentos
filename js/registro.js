@@ -141,13 +141,13 @@ function cargarRegiones() {
     region.innerHTML =
         '<option value="">Seleccione una región</option>';
 
-    Object.keys(regiones).forEach(function(clave) {
+    Object.keys(regiones).forEach(function(clave) { /*Recorre las claves del objeto regiones*/
 
-        const opcion = document.createElement("option");
+        const opcion = document.createElement("option"); /*Crea un elemento Option dentro del HTM*/
 
-        opcion.value = clave;
+        opcion.value = clave; /*A ese elemento le agrega value como clave osea <option value = arica></option>*/
 
-        switch (clave) {
+        switch (clave) { /*Permite asignar el nombre que vera el usuario en el selector*/
 
             case "arica":
                 opcion.textContent = "Arica y Parinacota";
@@ -215,7 +215,7 @@ function cargarRegiones() {
 
         }
 
-        region.appendChild(opcion);
+        region.appendChild(opcion); /*Esto permite que la opcion se incorpore al selector*/
 
     });
 
@@ -230,28 +230,31 @@ cargarRegiones();
 // CAMBIAR COMUNAS
 // =========================
 
-region.addEventListener("change", function() {
+region.addEventListener("change", function() {/*Cuanndo el cliente selecciona la comuna se desata este evento*/
 
     comuna.innerHTML =
         '<option value="">Seleccione una comuna</option>';
 
-    const regionSeleccionada = region.value;
+    const regionSeleccionada = region.value; /*Se obtiene la region seleccionada del registro por ejemplo value = metropolitana*/
 
 
-    if (regionSeleccionada === "") {
+    if (regionSeleccionada === "") { /*Se valida quee tenga contenido*/
         return;
     }
 
-
+/*Esto devuelve el arreglo de comunas relacionada al campo value
+forEach recorre cada comuna del arreglo*/
     regiones[regionSeleccionada].forEach(function(nombreComuna) {
 
-        const opcion = document.createElement("option");
+        const opcion = document.createElement("option"); /*Se crea una opcion para cada comuna*/
 
-        opcion.value = nombreComuna;
+        opcion.value = nombreComuna; /*<option value = "Maipu">*/
 
-        opcion.textContent = nombreComuna;
+        opcion.textContent = nombreComuna; /*Maipu = lo que ve el usuario"*/
 
-        comuna.appendChild(opcion);
+                                    /*</option>*/
+
+        comuna.appendChild(opcion); /*Finalmente esta opcion agrega lo anterior al selector de comunas*/
 
     });
 
@@ -379,7 +382,7 @@ formularioRegistro.addEventListener("submit", function(evento) {
 
         formularioValido = false;
 
-    } else if (!validarRun(runIngresado)) {
+2    } else if (!validarRun(runIngresado)) {
 
         errorRun.textContent =
             "El RUN ingresado no es válido";

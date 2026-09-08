@@ -1,38 +1,27 @@
-const usuarioActivo =
-    localStorage.getItem("usuarioActivo");
+const usuarioActivo = localStorage.getItem("usuarioActivo");
 
-const botonCerrarSesion =
-    document.querySelector("#cerrar-sesion");
+const botonCerrarSesion = document.querySelector("#cerrar-sesion");
 
-const totalUsuarios =
-    document.querySelector("#total-usuarios");
+const totalUsuarios = document.querySelector("#total-usuarios");
 
-const totalProductos =
-    document.querySelector("#total-productos");
+const totalProductos = document.querySelector("#total-productos");
 
-const bienvenidaAdmin =
-    document.querySelector("#bienvenida-admin");
+const bienvenidaAdmin = document.querySelector("#bienvenida-admin");
 
-const tarjetaUsuarios =
-    document.querySelector("#tarjeta-usuarios");
+const tarjetaUsuarios = document.querySelector("#tarjeta-usuarios");
 
-const tarjetaResumen =
-    document.querySelector("#tarjeta-resumen");
+const tarjetaResumen = document.querySelector("#tarjeta-resumen");
 
 
 // =========================
 // PROTEGER PANEL
 // =========================
 
-if (
-    usuarioActivo !== "admin" &&
-    usuarioActivo !== "vendedor"
-) {
+if (usuarioActivo !== "admin" &&  usuarioActivo !== "vendedor") {
 
     alert("Acceso no autorizado");
 
-    window.location.href =
-        "sesion.html";
+    window.location.href = "sesion.html";
 }
 
 
@@ -40,28 +29,20 @@ if (
 // RESUMEN
 // =========================
 
-const usuariosResumen =
-    JSON.parse(
-        localStorage.getItem("usuarios")
-    ) || [];
+const usuariosResumen = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-const productosResumen =
-    JSON.parse(
-        localStorage.getItem("productos")
-    ) || [];
+const productosResumen = JSON.parse(localStorage.getItem("productos")) || [];
 
 
 if (totalUsuarios) {
 
-    totalUsuarios.textContent =
-        usuariosResumen.length;
+    totalUsuarios.textContent = usuariosResumen.length;
 }
 
 
 if (totalProductos) {
 
-    totalProductos.textContent =
-        productosResumen.length;
+    totalProductos.textContent = productosResumen.length;
 }
 
 
@@ -73,8 +54,7 @@ if (usuarioActivo === "admin") {
 
     if (bienvenidaAdmin) {
 
-        bienvenidaAdmin.textContent =
-            "Bienvenido Administrador";
+        bienvenidaAdmin.textContent = "Bienvenido Administrador";
     }
 }
 
@@ -87,22 +67,19 @@ if (usuarioActivo === "vendedor") {
 
     if (bienvenidaAdmin) {
 
-        bienvenidaAdmin.textContent =
-            "Bienvenido Vendedor";
+        bienvenidaAdmin.textContent = "Bienvenido Vendedor";
     }
 
 
     if (tarjetaUsuarios) {
 
-        tarjetaUsuarios.style.display =
-            "none";
+        tarjetaUsuarios.style.display ="none";
     }
 
 
     if (tarjetaResumen) {
 
-        tarjetaResumen.style.display =
-            "none";
+        tarjetaResumen.style.display ="none";
     }
 }
 
@@ -113,20 +90,13 @@ if (usuarioActivo === "vendedor") {
 
 if (botonCerrarSesion) {
 
-    botonCerrarSesion.addEventListener(
-        "click",
-        function() {
+    botonCerrarSesion.addEventListener("click",function() {
 
-            localStorage.removeItem(
-                "usuarioActivo"
-            );
+            localStorage.removeItem("usuarioActivo");
 
-            localStorage.removeItem(
-                "usuarioSesion"
-            );
+            localStorage.removeItem("usuarioSesion");
 
-            window.location.href =
-                "sesion.html";
+            window.location.href ="sesion.html";
         }
     );
 }

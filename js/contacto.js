@@ -1,39 +1,27 @@
-const formulario =
-    document.querySelector("#form-contacto");
+const formulario = document.querySelector("#form-contacto");
 
-const nombre =
-    document.querySelector("#nombre");
+const nombre = document.querySelector("#nombre");
 
-const apellido =
-    document.querySelector("#apellido");
+const apellido = document.querySelector("#apellido");
 
-const correo =
-    document.querySelector("#correo");
+const correo = document.querySelector("#correo");
 
-const telefono =
-    document.querySelector("#telefono");
+const telefono = document.querySelector("#telefono");
 
-const mensaje =
-    document.querySelector("#mensaje");
+const mensaje = document.querySelector("#mensaje");
 
 
-const errorNombre =
-    document.querySelector("#error-nombre");
+const errorNombre = document.querySelector("#error-nombre");
 
-const errorApellido =
-    document.querySelector("#error-apellido");
+const errorApellido = document.querySelector("#error-apellido");
 
-const errorCorreo =
-    document.querySelector("#error-correo");
+const errorCorreo = document.querySelector("#error-correo");
 
-const errorTelefono =
-    document.querySelector("#error-telefono");
+const errorTelefono = document.querySelector("#error-telefono");
 
-const errorMensaje =
-    document.querySelector("#error-mensaje");
+const errorMensaje = document.querySelector("#error-mensaje");
 
-const mensajeEnviado =
-    document.querySelector("#mensaje-enviado");
+const mensajeEnviado = document.querySelector("#mensaje-enviado");
 
 
 
@@ -65,13 +53,9 @@ function limpiarErroresContacto() {
 
 function correoPermitido(correoIngresado) {
 
-    const correoLimpio =
-        correoIngresado
-            .trim()
-            .toLowerCase();
+    const correoLimpio = correoIngresado.trim().toLowerCase(); /*asigna el correo ingresado quita espacios en blanco y lo transforma a minuscula*/
 
-
-    return (
+    return ( /*Verifica que el correo termine en las opciones siguientes*/
 
         correoLimpio.endsWith("@duoc.cl") ||
 
@@ -84,44 +68,33 @@ function correoPermitido(correoIngresado) {
 }
 
 
-
 // =========================
 // ENVIAR FORMULARIO
 // =========================
 
-formulario.addEventListener(
-    "submit",
-    function(evento) {
+formulario.addEventListener("submit",function(evento) {
 
-        evento.preventDefault();
-
+        evento.preventDefault(); /*Detiene que la pagina se recargue para poder revisarla*/
 
         limpiarErroresContacto();
 
 
-        let formularioValido =
-            true;
+        let formularioValido = true;
 
 
-        const nombreValor =
-            nombre.value.trim();
+        const nombreValor = nombre.value.trim();
 
 
-        const apellidoValor =
-            apellido.value.trim();
+        const apellidoValor = apellido.value.trim();
 
 
-        const correoValor =
-            correo.value.trim();
+        const correoValor = correo.value.trim();
 
 
-        const telefonoValor =
-            telefono.value.trim();
+        const telefonoValor = telefono.value.trim();
 
 
-        const mensajeValor =
-            mensaje.value.trim();
-
+        const mensajeValor = mensaje.value.trim();
 
 
         // =========================
@@ -130,24 +103,17 @@ formulario.addEventListener(
 
         if (nombreValor === "") {
 
-            errorNombre.textContent =
-                "El nombre es obligatorio";
+            errorNombre.textContent = "El nombre es obligatorio";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            nombreValor.length > 100
-        ) {
+        } else if (nombreValor.length > 100) {
 
-            errorNombre.textContent =
-                "El nombre no puede superar los 100 caracteres";
+            errorNombre.textContent = "El nombre no puede superar los 100 caracteres";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
-
 
 
         // =========================
@@ -155,25 +121,18 @@ formulario.addEventListener(
         // =========================
 
         if (apellidoValor === "") {
+        
+            errorApellido.textContent = "El apellido es obligatorio";
 
-            errorApellido.textContent =
-                "El apellido es obligatorio";
+            formularioValido = false;
 
-            formularioValido =
-                false;
+        } else if (apellidoValor.length > 100) {
 
-        } else if (
-            apellidoValor.length > 100
-        ) {
+            errorApellido.textContent = "Los apellidos no pueden superar los 100 caracteres";
 
-            errorApellido.textContent =
-                "Los apellidos no pueden superar los 100 caracteres";
-
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
-
 
 
         // =========================
@@ -182,31 +141,21 @@ formulario.addEventListener(
 
         if (correoValor === "") {
 
-            errorCorreo.textContent =
-                "El correo es obligatorio";
+            errorCorreo.textContent = "El correo es obligatorio";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            correoValor.length > 100
-        ) {
+        } else if (correoValor.length > 100) {
 
-            errorCorreo.textContent =
-                "El correo no puede superar los 100 caracteres";
+            errorCorreo.textContent ="El correo no puede superar los 100 caracteres";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            !correoPermitido(correoValor)
-        ) {
+        } else if (!correoPermitido(correoValor)) {
 
-            errorCorreo.textContent =
-                "Ingrese un correo @duoc.cl, @profesor.duoc.cl o @gmail.com";
+            errorCorreo.textContent ="Ingrese un correo @duoc.cl, @profesor.duoc.cl o @gmail.com";
 
-            formularioValido =
-                false;
+            formularioValido =false;
 
         }
 
@@ -218,22 +167,15 @@ formulario.addEventListener(
 
         if (telefonoValor === "") {
 
-            errorTelefono.textContent =
-                "El teléfono es obligatorio";
+            errorTelefono.textContent ="El teléfono es obligatorio";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            telefonoValor.length !== 9 ||
-            isNaN(telefonoValor)
-        ) {
+        } else if (telefonoValor.length !== 9 || isNaN(telefonoValor)) {
 
-            errorTelefono.textContent =
-                "Ingrese un teléfono de 9 dígitos";
+            errorTelefono.textContent = "Ingrese un teléfono de 9 dígitos";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
 
@@ -245,21 +187,15 @@ formulario.addEventListener(
 
         if (mensajeValor === "") {
 
-            errorMensaje.textContent =
-                "El mensaje es obligatorio";
+            errorMensaje.textContent = "El mensaje es obligatorio";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
-        } else if (
-            mensajeValor.length > 500
-        ) {
+        } else if (mensajeValor.length > 500) {
 
-            errorMensaje.textContent =
-                "El mensaje no puede superar los 500 caracteres";
+            errorMensaje.textContent ="El mensaje no puede superar los 500 caracteres";
 
-            formularioValido =
-                false;
+            formularioValido = false;
 
         }
 
@@ -276,12 +212,7 @@ formulario.addEventListener(
         }
 
 
-        mensajeEnviado.textContent =
-            nombreValor +
-            " " +
-            apellidoValor +
-            ", se ha enviado su mensaje correctamente";
-
+        mensajeEnviado.textContent = nombreValor + " " + apellidoValor + ", se ha enviado su mensaje correctamente";
 
         formulario.reset();
 
